@@ -1,4 +1,0 @@
-services:
-#    gauge_presentation.example:
-#        class: GaugePresentationBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]

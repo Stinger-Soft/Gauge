@@ -1,0 +1,23 @@
+StingerSoft\GaugePresentationBundle\Entity\Slide:
+  type:  entity
+#  repositoryClass: StingerSoft\GaugePresentationBundle\Repository\SlideRepository
+  inheritanceType: JOINED
+  discriminatorColumn:
+    name: discr
+    type: string
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    question:
+      type: string
+      length: 512
+      nullable: false
+    description:
+      type: text
+      nullable: true
+  manyToOne:
+    presentation:
+      targetEntity: Presentation
+      inversedBy: slides

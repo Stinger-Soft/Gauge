@@ -1,6 +1,6 @@
 <?php
 
-namespace GaugePresentationBundle\Tests\Controller;
+namespace StingerSoft\GaugePresentationBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

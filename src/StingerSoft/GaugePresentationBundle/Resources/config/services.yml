@@ -1,0 +1,4 @@
+services:
+#    stinger_soft_gauge_presentation.example:
+#        class: StingerSoft\GaugePresentationBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

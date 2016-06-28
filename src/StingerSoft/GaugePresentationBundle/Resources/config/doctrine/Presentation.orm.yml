@@ -1,0 +1,23 @@
+StingerSoft\GaugePresentationBundle\Entity\Presentation:
+  type:  entity
+#  repositoryClass: StingerSoft\GaugePresentationBundle\Repository\PresentationRepository
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    title:
+      type: string
+      length: 255
+      nullable: false
+    privacy:
+      type: integer
+      nullable: true
+    pace:
+      type: integer
+      nullable: true
+  oneToMany:
+    slides:
+      targetEntity: Slide
+      cascade: ['persist', 'remove']
+      mappedBy: presentation

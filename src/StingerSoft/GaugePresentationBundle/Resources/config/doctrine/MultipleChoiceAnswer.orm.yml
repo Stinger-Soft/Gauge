@@ -1,0 +1,15 @@
+StingerSoft\GaugePresentationBundle\Entity\MultipleChoiceAnswer:
+  type:  entity
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    answer:
+      type: string
+      length: 255
+      nullable: true
+  manyToOne:
+    question:
+      targetEntity: MultipleChoice
+      inversedBy: answers

@@ -1,4 +1,4 @@
-gauge_presentation:
-    resource: "@GaugePresentationBundle/Resources/config/routing.yml"
+stinger_soft_gauge_presentation:
+    resource: "@StingerSoftGaugePresentationBundle/Resources/config/routing.yml"
     prefix:   /
 
