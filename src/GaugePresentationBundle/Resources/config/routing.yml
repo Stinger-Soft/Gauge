@@ -1,0 +1,3 @@
+gauge_presentation_homepage:
+    path:     /
+    defaults: { _controller: GaugePresentationBundle:Default:index }
