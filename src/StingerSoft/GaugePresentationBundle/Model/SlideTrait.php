@@ -2,15 +2,7 @@
 
 namespace StingerSoft\GaugePresentationBundle\Model;
 
-use StingerSoft\PlatformBundle\Model\Identifiable;
-use StingerSoft\PlatformBundle\Model\Trackable;
-use Knp\DoctrineBehaviors\Model as KnpBehaviors;
-
-abstract class AbstractSlide implements Identifiable, Trackable {
-	
-	use KnpBehaviors\Blameable\Blameable;
-	use KnpBehaviors\Sortable\Sortable;
-	use KnpBehaviors\Timestampable\Timestampable;
+trait SlideTrait {
 
 	protected $id;
 

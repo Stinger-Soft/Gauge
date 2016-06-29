@@ -10,20 +10,21 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/configuration.html}
  */
-class Configuration implements ConfigurationInterface
-{
-    /**
-     * {@inheritdoc}
-     */
-    public function getConfigTreeBuilder()
-    {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('stinger_soft_gauge_presentation');
+class Configuration implements ConfigurationInterface {
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
-
-        return $treeBuilder;
-    }
+	/**
+	 *
+	 * {@inheritdoc}
+	 *
+	 */
+	public function getConfigTreeBuilder() {
+		$treeBuilder = new TreeBuilder();
+		$rootNode = $treeBuilder->root('stinger_soft_gauge_presentation');
+		
+		// Here you should define the parameters that are allowed to
+		// configure your bundle. See the documentation linked above for
+		// more information on that topic.
+		
+		return $treeBuilder;
+	}
 }

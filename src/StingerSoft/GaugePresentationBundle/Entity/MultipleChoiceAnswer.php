@@ -2,7 +2,9 @@
 
 namespace StingerSoft\GaugePresentationBundle\Entity;
 
-use StingerSoft\GaugePresentationBundle\Model\AbstractMultipleChoiceAnswer;
+use StingerSoft\GaugePresentationBundle\Model\MultipleChoiceAnswerInterface;
+use StingerSoft\GaugePresentationBundle\Model\MultipleChoiceAnswerTrait;
 
-class MultipleChoiceAnswer extends AbstractMultipleChoiceAnswer {
+class MultipleChoiceAnswer implements MultipleChoiceAnswerInterface {
+	use MultipleChoiceAnswerTrait;
 }

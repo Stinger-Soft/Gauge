@@ -2,10 +2,13 @@
 
 namespace StingerSoft\GaugePresentationBundle\Entity;
 
-use StingerSoft\GaugePresentationBundle\Model\AbstractSlide;
+use StingerSoft\GaugePresentationBundle\Model\SlideInterface;
+use StingerSoft\GaugePresentationBundle\Model\SlideTrait;
+use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 
-
-class Slide extends AbstractSlide {
-	
-
+class Slide implements SlideInterface {
+	use SlideTrait;
+	use ORMBehaviors\Blameable\Blameable;
+	use ORMBehaviors\Sortable\Sortable;
+	use ORMBehaviors\Timestampable\Timestampable;
 }

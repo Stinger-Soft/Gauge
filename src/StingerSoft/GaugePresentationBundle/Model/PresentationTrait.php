@@ -2,14 +2,7 @@
 
 namespace StingerSoft\GaugePresentationBundle\Model;
 
-use Knp\DoctrineBehaviors\Model as KnpBehaviors;
-use StingerSoft\PlatformBundle\Model\Identifiable;
-use StingerSoft\PlatformBundle\Model\Trackable;
-
-abstract class AbstractPresentation implements Identifiable, Trackable {
-	
-	use KnpBehaviors\Blameable\Blameable;
-	use KnpBehaviors\Timestampable\Timestampable;
+trait PresentationTrait {
 
 	protected $id;
 
