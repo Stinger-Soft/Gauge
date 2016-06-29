@@ -24,4 +24,14 @@ trait SlideTrait {
 		$this->question = $question;
 		return $this;
 	}
+
+	public function getPresentation() {
+		return $this->presentation;
+	}
+
+	public function setPresentation(PresentationInterface $presentation) {
+		$this->presentation = $presentation;
+		return $this;
+	}
+	
 }

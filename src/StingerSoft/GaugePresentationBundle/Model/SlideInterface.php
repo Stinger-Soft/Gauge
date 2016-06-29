@@ -12,4 +12,8 @@ interface SlideInterface extends Identifiable, Trackable {
 	public function getQuestion();
 
 	public function setQuestion($question);
+	
+	public function setPresentation(PresentationInterface $presentation);
+	
+	public function getPresentation();
 }

@@ -13,6 +13,7 @@ class StingerSoftGaugePresentationBundle extends Bundle {
 		
 		// START remove later
 		$bundles['DoctrineBehaviorsBundle'] = '\Knp\DoctrineBehaviors\Bundle\DoctrineBehaviorsBundle';
+		$bundles['DoctrineFixturesBundle'] = '\Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle';
 		// END remove later
 		
 		$bundles = array_merge($bundles, StingerSoftPlatformBundle::getRequiredBundles($env));

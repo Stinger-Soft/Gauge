@@ -1,6 +1,6 @@
 <?php
 
-namespace StingerSoft\GaugePresentationBundle\Entity\Enums;
+namespace StingerSoft\GaugePresentationBundle\Model\Enums;
 
 abstract class Privacy {
 	
