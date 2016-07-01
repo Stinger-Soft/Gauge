@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fa6619157bc55bdbae3b816923aab8b2",
-    "content-hash": "11f7e535890fbe869862725c9957407a",
+    "hash": "896d2bcbb061490fe19c13735a6ff739",
+    "content-hash": "33e509dd4bb2070d1011a9d5299a3785",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -2068,20 +2068,141 @@
             "time": "2015-11-07 08:07:40"
         },
         {
+            "name": "stinger-soft/doctrine-commons",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Stinger-Soft/DoctrineCommons.git",
+                "reference": "a3a38b042a46b44d99c969153a470e972c7fe98a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Stinger-Soft/DoctrineCommons/zipball/a3a38b042a46b44d99c969153a470e972c7fe98a",
+                "reference": "a3a38b042a46b44d99c969153a470e972c7fe98a",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/common": ">=2.5.0",
+                "doctrine/orm": ">=2.5.0",
+                "php": ">=5.5",
+                "symfony/http-kernel": "^2.8|^3.0",
+                "symfony/translation": "^2.8|^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.1|~5.0",
+                "satooshi/php-coveralls": "~0.7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev",
+                    "dev-develop": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "StingerSoft\\DoctrineCommons\\": "src/StingerSoft/DoctrineCommons"
+                },
+                "exclude-from-classmap": [
+                    "/tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Florian Meyer",
+                    "email": "florian.meyer@stinger-soft.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Helper functions and DQL Extensions for Doctrine",
+            "homepage": "http://www.stinger-soft.net",
+            "keywords": [
+                "commons",
+                "doctrine"
+            ],
+            "time": "2016-07-01 15:29:28"
+        },
+        {
+            "name": "stinger-soft/php-commons",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Stinger-Soft/PhpCommons.git",
+                "reference": "193d422fb89f6d69ba80f82f1fe616a140db0632"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Stinger-Soft/PhpCommons/zipball/193d422fb89f6d69ba80f82f1fe616a140db0632",
+                "reference": "193d422fb89f6d69ba80f82f1fe616a140db0632",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.1|~5.0",
+                "satooshi/php-coveralls": "~0.7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev",
+                    "dev-develop": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "StingerSoft\\PhpCommons\\": "src/StingerSoft/PhpCommons"
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Florian Meyer",
+                    "email": "florian.meyer@stinger-soft.net",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Oliver Kotte",
+                    "email": "oliver.kotte@stinger-soft.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Some common php functions",
+            "homepage": "http://www.stinger-soft.net",
+            "keywords": [
+                "commons",
+                "php"
+            ],
+            "time": "2016-06-30 07:07:34"
+        },
+        {
             "name": "stinger-soft/platform-bundle",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Stinger-Soft/PlatformBundle.git",
-                "reference": "3317dbc7ed7cf2f583d4f909764e57bc52a07e4c"
+                "reference": "ab7a70e6d76cb473738889cea7095891df0b7ca2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Stinger-Soft/PlatformBundle/zipball/3317dbc7ed7cf2f583d4f909764e57bc52a07e4c",
-                "reference": "3317dbc7ed7cf2f583d4f909764e57bc52a07e4c",
+                "url": "https://api.github.com/repos/Stinger-Soft/PlatformBundle/zipball/ab7a70e6d76cb473738889cea7095891df0b7ca2",
+                "reference": "ab7a70e6d76cb473738889cea7095891df0b7ca2",
                 "shasum": ""
             },
             "require": {
+                "bmatzner/fontawesome-bundle": "~4.6.1",
+                "bmatzner/jquery-bundle": "~2.2.2",
                 "doctrine/data-fixtures": "~1.1.1",
                 "doctrine/doctrine-bundle": "^1.6",
                 "doctrine/doctrine-cache-bundle": "^1.2",
@@ -2098,11 +2219,15 @@
                 "php": ">=5.5",
                 "sensio/distribution-bundle": "^5.0",
                 "sensio/framework-extra-bundle": "^3.0.2",
+                "stinger-soft/doctrine-commons": "~0.1@dev",
+                "stinger-soft/php-commons": "~0.1@dev",
+                "symfony/assetic-bundle": "~2.8",
                 "symfony/monolog-bundle": "^2.8",
                 "symfony/polyfill-apcu": "^1.0",
                 "symfony/swiftmailer-bundle": "^2.3",
                 "symfony/symfony": "^3.0",
                 "twbs/bootstrap-sass": "~3.3.6",
+                "twig/extensions": "~1.3.0",
                 "willdurand/js-translation-bundle": "~2.5"
             },
             "require-dev": {
@@ -2145,7 +2270,7 @@
             "keywords": [
                 "platform"
             ],
-            "time": "2016-06-29 11:58:22"
+            "time": "2016-07-01 15:30:17"
         },
         {
             "name": "swiftmailer/swiftmailer",

@@ -24,6 +24,7 @@
 
 {% stylesheets filter="cssrewrite"
 	'bundles/bmatznerfontawesome/css/font-awesome.min.css'
+	'bundles/bmatznerfontawesome/css/font-awesome.min.css'
 	'bundles/stingersoftgaugepresentation/scss/layout.scss'
 %}
 	<link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
@@ -34,12 +35,11 @@
 {% endblock stylesheets %}
 
 {% block javascripts_head %}
-<!-- Latest compiled and minified JavaScript -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-	integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-	crossorigin="anonymous"></script>
-	
+    {% javascripts
+        '@header_js' 
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
 {% endblock javascripts_head %}
 </head>
 <body>

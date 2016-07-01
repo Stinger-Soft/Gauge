@@ -1,6 +1,6 @@
 StingerSoft\GaugePresentationBundle\Entity\Presentation:
   type:  entity
-#  repositoryClass: StingerSoft\GaugePresentationBundle\Repository\PresentationRepository
+  repositoryClass: StingerSoft\GaugePresentationBundle\Repository\ORM\PresentationRepository
   id:
     id:
       type: integer

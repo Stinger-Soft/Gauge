@@ -17,4 +17,6 @@
 /web/assetic/
 /web/css/
 /web/images/
+/web/js/
+/web/uploads/
 /.buildpath

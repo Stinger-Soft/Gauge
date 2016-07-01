@@ -13,17 +13,21 @@
 				<th class="actions"></th>
 			</thead>
 			<tbody>
-				<td class="presentation_name">Which season is your favorite?</td>
-				<td class="last_updated">{{ 'now'|localizeddate('medium', 'none') }}</td>
-				<td class="questions">1</td>
-				<td class="respondents">12</td>
-				<td class="actions">
-					<i class="fa fa-fw fa-download"></i>
-					<i class="fa fa-fw fa-files-o"></i>
-					<i class="fa fa-fw fa-trash-o"></i>
-					
-				
-				</td>
+				{% for presentation in presentations %}
+					<td class="presentation_name">
+						{{ presentation.title }}
+					</td>
+					<td class="last_updated">
+						{{ presentation.updatedAt|localizeddate('medium', 'none') }}
+					</td>
+					<td class="questions">1</td>
+					<td class="respondents">12</td>
+					<td class="actions">
+						<i class="fa fa-fw fa-download"></i>
+						<i class="fa fa-fw fa-files-o"></i>
+						<i class="fa fa-fw fa-trash-o"></i>
+					</td>
+				{% endfor %}
 			</tbody>
 		</table>
 	</div>
