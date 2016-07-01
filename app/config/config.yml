@@ -2,15 +2,22 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: '../../vendor/stinger-soft/platform-bundle/Resources/config/bundles/assetic.yml' }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    
+assetic:
+    filters:
+        scssphp: 
+            import_paths: 
+              - '%kernel.root_dir%/src/StingerSoft/GaugePresnetationBundle/Resources/public/scss'
 
 framework:
     #esi:             ~
-    #translator:      { fallbacks: ["%locale%"] }
+    translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"

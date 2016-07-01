@@ -1,0 +1,10 @@
+stinger_soft_gauge:
+  layout:
+    brand: Gauge
+    toggle_navigation: Toggle navigation
+    menu:
+      homepage: Start
+      presentations: Presentations
+      styles: Styling options
+      settings: Account settings
+      

@@ -1,2 +1,31 @@
 {% extends 'StingerSoftGaugePresentationBundle::layout.html.twig' %}
-{% block title %}Hello World!{% endblock %}
+{% block title %}My presentations{% endblock %}
+{% block body %}
+<div class="container-fluid">
+	<div class="col-md-12">
+		<h1 class="page-header">{{ block('title') }}</h1>
+		<table class="table">
+			<thead>
+				<th class="presentation_name">Presentation name</th>
+				<th class="last_updated">Last updated</th>
+				<th class="questions"># of questions</th>
+				<th class="respondents">Respondents</th>
+				<th class="actions"></th>
+			</thead>
+			<tbody>
+				<td class="presentation_name">Which season is your favorite?</td>
+				<td class="last_updated">{{ 'now'|localizeddate('medium', 'none') }}</td>
+				<td class="questions">1</td>
+				<td class="respondents">12</td>
+				<td class="actions">
+					<i class="fa fa-fw fa-download"></i>
+					<i class="fa fa-fw fa-files-o"></i>
+					<i class="fa fa-fw fa-trash-o"></i>
+					
+				
+				</td>
+			</tbody>
+		</table>
+	</div>
+</div>
+{% endblock body %}
