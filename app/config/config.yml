@@ -14,6 +14,8 @@ assetic:
         scssphp: 
             import_paths: 
               - '%kernel.root_dir%/src/StingerSoft/GaugePresnetationBundle/Resources/public/scss'
+              - '%kernel.root_dir%/../vendor/twbs/bootstrap-sass/assets/stylesheets/'
+            apply_to: '\.scss$'
 
 framework:
     #esi:             ~
