@@ -31,9 +31,8 @@ jQuery(document).ready(function(){
     });
     setInterval(function () {
 		jQuery.getJSON({{ path('stinger_soft_gauge_presentation_slide_data', {'slide': slide.id})|json_encode|raw}}, function( data ) {
-			chart.dataProvider = data;
+			chart.animateData(data, { duration: 1000 });
 		});
-        chart.validateData();
     }, 5000);
     
 });
