@@ -49,4 +49,27 @@ interface PresentationInterface extends Identifiable, Trackable {
 	 * @param unknown_type $pace        	
 	 */
 	public function setPace($pace);
+
+	/**
+	 * Add slide
+	 *
+	 * @param SlideInterface $slide        	
+	 *
+	 * @return Presentation
+	 */
+	public function addSlide(SlideInterface $slide);
+
+	/**
+	 * Remove slide
+	 *
+	 * @param SlideInterface $slide        	
+	 */
+	public function removeSlide(SlideInterface $slide);
+
+	/**
+	 * Get slides
+	 *
+	 * @return \Doctrine\Common\Collections\Collection|SlideInterface[]
+	 */
+	public function getSlides();
 }

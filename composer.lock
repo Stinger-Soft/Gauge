@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "896d2bcbb061490fe19c13735a6ff739",
-    "content-hash": "33e509dd4bb2070d1011a9d5299a3785",
+    "hash": "d15b82fe7a0abe174009e2fa5bee7efb",
+    "content-hash": "86e406149723be1c9fb500ccd61aa92f",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -1701,16 +1701,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.19.0",
+            "version": "1.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "5f56ed5212dc509c8dc8caeba2715732abb32dbf"
+                "reference": "55841909e2bcde01b5318c35f2b74f8ecc86e037"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/5f56ed5212dc509c8dc8caeba2715732abb32dbf",
-                "reference": "5f56ed5212dc509c8dc8caeba2715732abb32dbf",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/55841909e2bcde01b5318c35f2b74f8ecc86e037",
+                "reference": "55841909e2bcde01b5318c35f2b74f8ecc86e037",
                 "shasum": ""
             },
             "require": {
@@ -1729,8 +1729,8 @@
                 "php-console/php-console": "^3.1.3",
                 "phpunit/phpunit": "~4.5",
                 "phpunit/phpunit-mock-objects": "2.3.0",
-                "raven/raven": "^0.13",
                 "ruflin/elastica": ">=0.90 <3.0",
+                "sentry/sentry": "^0.13",
                 "swiftmailer/swiftmailer": "~5.3"
             },
             "suggest": {
@@ -1742,9 +1742,9 @@
                 "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
                 "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
                 "php-console/php-console": "Allow sending log messages to Google Chrome",
-                "raven/raven": "Allow sending log messages to a Sentry server",
                 "rollbar/rollbar": "Allow sending log messages to Rollbar",
-                "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
+                "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
+                "sentry/sentry": "Allow sending log messages to a Sentry server"
             },
             "type": "library",
             "extra": {
@@ -1775,7 +1775,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-04-12 18:29:35"
+            "time": "2016-07-02 14:02:10"
         },
         {
             "name": "paragonie/random_compat",
@@ -2068,6 +2068,56 @@
             "time": "2015-11-07 08:07:40"
         },
         {
+            "name": "stinger-soft/amchart-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Stinger-Soft/AmChartBundle.git",
+                "reference": "536d54e5fb422f92b8568be4d524385160417ff7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Stinger-Soft/AmChartBundle/zipball/536d54e5fb422f92b8568be4d524385160417ff7",
+                "reference": "536d54e5fb422f92b8568be4d524385160417ff7",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/framework-bundle": ">=2.3"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "StingerSoft\\AmChartBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL v2",
+                "BSD (3-point)"
+            ],
+            "authors": [
+                {
+                    "name": "Florian Meyer",
+                    "email": "florian.meyer@stinger-soft.net",
+                    "homepage": "http://www.stinger-soft.net",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Oliver Kotte",
+                    "email": "oliver.kotte@stinger-soft.net",
+                    "homepage": "http://www.stinger-soft.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "amChart (http://www.amcharts.com/) Bundle for Symfony",
+            "homepage": "http://www.amcharts.com/",
+            "keywords": [
+                "amchart",
+                "symfony"
+            ],
+            "time": "2016-07-04 12:31:28"
+        },
+        {
             "name": "stinger-soft/doctrine-commons",
             "version": "dev-master",
             "source": {
@@ -2132,12 +2182,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Stinger-Soft/PhpCommons.git",
-                "reference": "193d422fb89f6d69ba80f82f1fe616a140db0632"
+                "reference": "186ed27dd6a92366101ab1d4bd27a43e2fae45e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Stinger-Soft/PhpCommons/zipball/193d422fb89f6d69ba80f82f1fe616a140db0632",
-                "reference": "193d422fb89f6d69ba80f82f1fe616a140db0632",
+                "url": "https://api.github.com/repos/Stinger-Soft/PhpCommons/zipball/186ed27dd6a92366101ab1d4bd27a43e2fae45e0",
+                "reference": "186ed27dd6a92366101ab1d4bd27a43e2fae45e0",
                 "shasum": ""
             },
             "require": {
@@ -2184,7 +2234,7 @@
                 "commons",
                 "php"
             ],
-            "time": "2016-06-30 07:07:34"
+            "time": "2016-07-04 10:12:10"
         },
         {
             "name": "stinger-soft/platform-bundle",
@@ -2192,12 +2242,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Stinger-Soft/PlatformBundle.git",
-                "reference": "ab7a70e6d76cb473738889cea7095891df0b7ca2"
+                "reference": "2bda8add65b49bd208f2c5c9dbee5188d8caaa4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Stinger-Soft/PlatformBundle/zipball/ab7a70e6d76cb473738889cea7095891df0b7ca2",
-                "reference": "ab7a70e6d76cb473738889cea7095891df0b7ca2",
+                "url": "https://api.github.com/repos/Stinger-Soft/PlatformBundle/zipball/2bda8add65b49bd208f2c5c9dbee5188d8caaa4f",
+                "reference": "2bda8add65b49bd208f2c5c9dbee5188d8caaa4f",
                 "shasum": ""
             },
             "require": {
@@ -2231,8 +2281,8 @@
                 "willdurand/js-translation-bundle": "~2.5"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4",
-                "satooshi/php-coveralls": "~0.6.1",
+                "phpunit/phpunit": "~4.1|~5.0",
+                "satooshi/php-coveralls": "~0.7.1",
                 "sensio/generator-bundle": "^3.0",
                 "symfony/phpunit-bridge": "^3.0"
             },
@@ -2270,7 +2320,7 @@
             "keywords": [
                 "platform"
             ],
-            "time": "2016-07-01 15:30:17"
+            "time": "2016-07-04 10:06:16"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3362,7 +3412,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "stinger-soft/platform-bundle": 20
+        "stinger-soft/platform-bundle": 20,
+        "stinger-soft/amchart-bundle": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

@@ -15,6 +15,13 @@ trait PresentationTrait {
 	protected $slides;
 
 	/**
+	 * Constructor
+	 */
+	public function __construct() {
+		$this->slides = new \Doctrine\Common\Collections\ArrayCollection();
+	}
+
+	/**
 	 *
 	 * @return int
 	 */
@@ -72,5 +79,36 @@ trait PresentationTrait {
 	public function setPace($pace) {
 		$this->pace = $pace;
 		return $this;
+	}
+
+	/**
+	 * Add slide
+	 *
+	 * @param SlideInterface $slide        	
+	 *
+	 * @return Presentation
+	 */
+	public function addSlide(SlideInterface $slide) {
+		$this->slides[] = $slide;
+		
+		return $this;
+	}
+
+	/**
+	 * Remove slide
+	 *
+	 * @param SlideInterface $slide        	
+	 */
+	public function removeSlide(SlideInterface $slide) {
+		$this->slides->removeElement($slide);
+	}
+
+	/**
+	 * Get slides
+	 *
+	 * @return \Doctrine\Common\Collections\Collection|SlideInterface[]
+	 */
+	public function getSlides() {
+		return $this->slides;
 	}
 }

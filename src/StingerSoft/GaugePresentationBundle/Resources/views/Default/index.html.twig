@@ -1,6 +1,6 @@
 {% extends 'StingerSoftGaugePresentationBundle::layout.html.twig' %}
 {% block title %}My presentations{% endblock %}
-{% block body %}
+{% block content %}
 <div class="container-fluid">
 	<div class="col-md-12">
 		<h1 class="page-header">{{ block('title') }}</h1>
@@ -23,7 +23,7 @@
 					<td class="questions">1</td>
 					<td class="respondents">12</td>
 					<td class="actions">
-						<a href="" class="btn red">
+						<a href="{{ path('stinger_soft_gauge_presentation_presentation', {'presentation': presentation.id }) }}" class="btn red">
 							<i class="fa fa-fw fa-play-circle"></i>
 						</a>
 						<i class="fa fa-fw fa-download"></i>
@@ -35,4 +35,4 @@
 		</table>
 	</div>
 </div>
-{% endblock body %}
+{% endblock content %}

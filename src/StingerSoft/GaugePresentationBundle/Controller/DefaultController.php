@@ -2,11 +2,8 @@
 
 namespace StingerSoft\GaugePresentationBundle\Controller;
 
-use StingerSoft\PlatformBundle\Controller\BaseController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use StingerSoft\GaugePresentationBundle\Repository\PresentationRepositoryInterface;
-use StingerSoft\GaugePresentationBundle\Entity\Presentation;
 
 class DefaultController extends BaseController {
 
@@ -23,10 +20,5 @@ class DefaultController extends BaseController {
 	}
 	
 	
-	/**
-	 * @return PresentationRepositoryInterface
-	 */
-	protected function getPresentationRepository(){
-		return $this->getRepository(Presentation::class);
-	}
+
 }

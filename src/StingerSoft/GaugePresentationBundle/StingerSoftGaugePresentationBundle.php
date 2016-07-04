@@ -10,6 +10,7 @@ class StingerSoftGaugePresentationBundle extends Bundle {
 	public static function getRequiredBundles($env) {
 		$bundles = array();
 		$bundles['StingerSoftGaugePresentationBundle'] = '\StingerSoft\GaugePresentationBundle\StingerSoftGaugePresentationBundle';
+		$bundles['StingerSoftAmChartBundle'] = '\StingerSoft\AmChartBundle\StingerSoftAmChartBundle';
 		
 		// START remove later
 		$bundles['DoctrineBehaviorsBundle'] = '\Knp\DoctrineBehaviors\Bundle\DoctrineBehaviorsBundle';

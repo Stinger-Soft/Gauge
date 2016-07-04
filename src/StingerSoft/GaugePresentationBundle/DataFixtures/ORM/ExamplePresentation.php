@@ -7,6 +7,7 @@ use StingerSoft\GaugePresentationBundle\Entity\Presentation;
 use StingerSoft\GaugePresentationBundle\Model\Enums\Pace;
 use StingerSoft\GaugePresentationBundle\Model\Enums\Privacy;
 use StingerSoft\PlatformBundle\DataFixtures\AbstractStingerFixture;
+use StingerSoft\GaugePresentationBundle\Entity\MultipleChoiceAnswer;
 
 class ExamplePresentation extends AbstractStingerFixture {
 
@@ -21,7 +22,20 @@ class ExamplePresentation extends AbstractStingerFixture {
 		$multipleChoiceSlide = $this->getMultipleChoiceSlide();
 		$multipleChoiceSlide->setQuestion('What is your favorite season?');
 		$multipleChoiceSlide->setPresentation($presentation);
+		
 		$this->manager->persist($multipleChoiceSlide);
+		$this->manager->flush();
+	
+		$multipleChoiceSlideAnswer = new MultipleChoiceAnswer();
+		$multipleChoiceSlideAnswer->setAnswer('Spring');
+		$multipleChoiceSlideAnswer->setQuestion($multipleChoiceSlide);
+		$this->manager->persist($multipleChoiceSlideAnswer);
+		$this->manager->flush();
+		
+		$multipleChoiceSlideAnswer = new MultipleChoiceAnswer();
+		$multipleChoiceSlideAnswer->setAnswer('Summer');
+		$multipleChoiceSlideAnswer->setQuestion($multipleChoiceSlide);
+		$this->manager->persist($multipleChoiceSlideAnswer);
 		$this->manager->flush();
 	}
 

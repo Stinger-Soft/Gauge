@@ -10,27 +10,15 @@
 
 
 {% block stylesheets %}
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-	crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
-	integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
-	crossorigin="anonymous">
 
 {% stylesheets filter="cssrewrite"
 	'bundles/bmatznerfontawesome/css/font-awesome.min.css'
+	'bundles/stingersoftplatform/scss/bootstrap.scss'
 	'bundles/stingersoftplatform/scss/components.scss'
 	'bundles/stingersoftgaugepresentation/scss/layout.scss'
 %}
 	<link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
 {% endstylesheets %}
-
-<!-- 'bundles/bmatznerjquery/js/jquery.min.js' -->
 
 {% endblock stylesheets %}
 
@@ -43,7 +31,7 @@
 {% endblock javascripts_head %}
 </head>
 <body>
-
+{% block body %}
 	<header class="navbar navbar-inverse navbar-static-top" id="top">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -86,11 +74,12 @@
 		</div>
 	</header>
 	<section id="body">
-		{% block body %}
+		{% block content %}
 		<div class="container-fluid">
 		
 		</div>
-		{% endblock body %}
+		{% endblock content %}
 	</section>
+{% endblock body %}
 </body>
 </html>

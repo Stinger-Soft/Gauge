@@ -1,3 +1,7 @@
 stinger_soft_gauge_presentation_homepage:
     path:     /
     defaults: { _controller: StingerSoftGaugePresentationBundle:Default:index }
+    
+stinger_soft_gauge_presentation_presentation:
+    path:     /presentation/{presentation}
+    defaults: { _controller: StingerSoftGaugePresentationBundle:Presentation:index }
