@@ -5,3 +5,8 @@ stinger_soft_gauge_presentation_homepage:
 stinger_soft_gauge_presentation_presentation:
     path:     /presentation/{presentation}
     defaults: { _controller: StingerSoftGaugePresentationBundle:Presentation:index }
+
+    
+stinger_soft_gauge_presentation_slide_data:
+    path:     /slide/{slide}/data.json
+    defaults: { _controller: StingerSoftGaugePresentationBundle:Slide:data }

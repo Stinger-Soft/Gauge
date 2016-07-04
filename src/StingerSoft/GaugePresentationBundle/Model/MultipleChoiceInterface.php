@@ -12,6 +12,9 @@ interface MultipleChoiceInterface extends SlideInterface {
 
 	public function setShowResultInPercentage($showResultInPercentage);
 
+	/**
+	 * @return MultipleChoiceAnswerInterface[] 
+	 */
 	public function getAnswers();
 
 	public function setAnswers($answers);

@@ -8,8 +8,18 @@
 %}
 	<link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
 {% endstylesheets %}
-
 {% endblock stylesheets %}
+
+{% block javascripts_body %}
+	{{ parent() }}
+	{% javascripts
+		'bundles/stingersoftamchart/scripts/amcharts.js'
+		'bundles/stingersoftamchart/scripts/pie.js'
+		'bundles/stingersoftamchart/scripts/themes/light.js' 
+	%}
+		<script src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+{% endblock javascripts_body %}
 
 
 {% block body %}

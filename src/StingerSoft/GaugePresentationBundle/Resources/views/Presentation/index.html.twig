@@ -11,32 +11,31 @@
 
 
 {% block slide_content %}
-<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-<script src="https://www.amcharts.com/lib/3/pie.js"></script>
-<script src="https://www.amcharts.com/lib/3/themes/none.js"></script>
 <div id="chartdiv" style="width: 100%; height: 75vh"></div>
 <script>
-
-var chart = AmCharts.makeChart( "chartdiv", {
-	"type": "pie",
-	"theme": "none",
-	"dataProvider": [
-		{% for answer in slide.answers %}
-		{
-			"answer": {{ answer.answer|json_encode|raw }},
-			"votes": {{ random(10) }}
-		}{% if not loop.last %},{% endif %}
-		{% endfor %}
-	],
-	"valueField": "votes",
-	"titleField": "answer",
-    "outlineAlpha": 0.4,
-    "depth3D": 15,
-    "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
-    "angle": 30,
-    "export": {
-    	"enabled": true
-    }
+jQuery(document).ready(function(){
+	var chartData = [];
+    var chart = AmCharts.makeChart( "chartdiv", {
+    	"type": "pie",
+    	"theme": "light",
+    	"dataProvider": chartData,
+    	"valueField": "votes",
+    	"titleField": "answer",
+        "outlineAlpha": 0.4,
+        "depth3D": 15,
+        "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+        "angle": 30,
+        "export": {
+        	"enabled": true
+        }
+    });
+    setInterval(function () {
+		jQuery.getJSON({{ path('stinger_soft_gauge_presentation_slide_data', {'slide': slide.id})|json_encode|raw}}, function( data ) {
+			chart.dataProvider = data;
+		});
+        chart.validateData();
+    }, 5000);
+    
 });
 </script>
 {% endblock %}
