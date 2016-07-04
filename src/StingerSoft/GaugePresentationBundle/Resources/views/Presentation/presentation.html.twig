@@ -26,7 +26,7 @@
 {% block body %}
 	<header id="join_header">
 		<div class="container-fluid">
-			<h1>Visit gauge.schnubbel and enter 234234</h1>
+			<h1>{{ 'stinger_soft_gauge.presentation.index.join_text'|trans({'%presentation_id%': presentation.id})|raw }}</h1>
 		</div>
 	</header>
 	<section id="body">

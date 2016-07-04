@@ -3,7 +3,7 @@
 namespace StingerSoft\GaugePresentationBundle\Entity;
 
 use StingerSoft\GaugePresentationBundle\Model\SlideInterface;
-use StingerSoft\GaugePresentationBundle\Model\SlideTrait;
+use StingerSoft\GaugePresentationBundle\Model\Traits\SlideTrait;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 
 class Slide implements SlideInterface {

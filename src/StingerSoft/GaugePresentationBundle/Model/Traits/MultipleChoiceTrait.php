@@ -1,14 +1,12 @@
 <?php
 
-namespace StingerSoft\GaugePresentationBundle\Model;
+namespace StingerSoft\GaugePresentationBundle\Model\Traits;
 
 trait MultipleChoiceTrait {
 
 	protected $allowMultiple;
 
 	protected $showResultInPercentage;
-
-	protected $answers;
 
 	public function getAllowMultiple() {
 		return $this->allowMultiple;
@@ -25,15 +23,6 @@ trait MultipleChoiceTrait {
 
 	public function setShowResultInPercentage($showResultInPercentage) {
 		$this->showResultInPercentage = $showResultInPercentage;
-		return $this;
-	}
-
-	public function getAnswers() {
-		return $this->answers;
-	}
-
-	public function setAnswers($answers) {
-		$this->answers = $answers;
 		return $this;
 	}
 }

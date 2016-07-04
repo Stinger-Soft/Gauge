@@ -1,0 +1,22 @@
+StingerSoft\GaugePresentationBundle\Entity\Scale:
+  type:  entity
+  fields:
+    lowValue:
+      type: integer
+      nullable: true
+    highValue:
+      type: integer
+      nullable: true
+    lowLabel:
+      type: string
+      lenght: 255
+      nullable: true
+    highLabel:
+      type: string
+      lenght: 255
+      nullable: true
+  oneToMany:
+    answers:
+      targetEntity: ScaleAnswer
+      cascade: ['persist', 'remove']
+      mappedBy: question

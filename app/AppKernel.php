@@ -3,10 +3,12 @@ use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use StingerSoft\GaugePresentationBundle\StingerSoftGaugePresentationBundle;
 use StingerSoft\PlatformBundle\StingerSoftPlatformBundle;
+use StingerSoft\GaugeSurveyBundle\StingerSoftGaugeSurveyBundle;
 class AppKernel extends Kernel {
 
 	public function registerBundles() {
 		$bundleClasses = StingerSoftGaugePresentationBundle::getRequiredBundles($this->getEnvironment());
+		$bundleClasses = array_merge($bundleClasses, StingerSoftGaugeSurveyBundle::getRequiredBundles($this->getEnvironment()));
 		$bundles = StingerSoftPlatformBundle::initBundles($bundleClasses);
 		return $bundles;
 	}

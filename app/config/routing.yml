@@ -1,4 +1,8 @@
+stinger_soft_gauge_survey:
+    resource: "@StingerSoftGaugeSurveyBundle/Resources/config/routing.yml"
+    prefix:   /
+
 stinger_soft_gauge_presentation:
     resource: "@StingerSoftGaugePresentationBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /backend/
 

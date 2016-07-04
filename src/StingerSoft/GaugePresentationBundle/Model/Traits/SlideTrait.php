@@ -1,6 +1,8 @@
 <?php
 
-namespace StingerSoft\GaugePresentationBundle\Model;
+namespace StingerSoft\GaugePresentationBundle\Model\Traits;
+
+use StingerSoft\GaugePresentationBundle\Model\PresentationInterface;
 
 trait SlideTrait {
 
@@ -11,6 +13,8 @@ trait SlideTrait {
 	protected $description;
 
 	protected $presentation;
+
+	protected $answers;
 
 	public function getId() {
 		return $this->id;
@@ -33,5 +37,17 @@ trait SlideTrait {
 		$this->presentation = $presentation;
 		return $this;
 	}
+
+	public function getAnswers() {
+		return $this->answers;
+	}
+
+	public function setAnswers($answers) {
+		$this->answers = $answers;
+		return $this;
+	}
 	
+	public function __toString(){
+		return $this->question;
+	}
 }

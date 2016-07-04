@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d15b82fe7a0abe174009e2fa5bee7efb",
+    "hash": "a30ac913ef39e4c1110822b671ff02a9",
     "content-hash": "86e406149723be1c9fb500ccd61aa92f",
     "packages": [
         {
@@ -2242,12 +2242,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Stinger-Soft/PlatformBundle.git",
-                "reference": "e74f3784c3ac8ca6e5ca907c498580c69633d561"
+                "reference": "de8df0eba5a6ac10eb6dbf0f293c12af753a703e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Stinger-Soft/PlatformBundle/zipball/e74f3784c3ac8ca6e5ca907c498580c69633d561",
-                "reference": "e74f3784c3ac8ca6e5ca907c498580c69633d561",
+                "url": "https://api.github.com/repos/Stinger-Soft/PlatformBundle/zipball/de8df0eba5a6ac10eb6dbf0f293c12af753a703e",
+                "reference": "de8df0eba5a6ac10eb6dbf0f293c12af753a703e",
                 "shasum": ""
             },
             "require": {
@@ -2320,7 +2320,7 @@
             "keywords": [
                 "platform"
             ],
-            "time": "2016-07-04 12:52:06"
+            "time": "2016-07-04 13:58:54"
         },
         {
             "name": "swiftmailer/swiftmailer",

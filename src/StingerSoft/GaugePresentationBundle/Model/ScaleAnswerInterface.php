@@ -2,7 +2,7 @@
 
 namespace StingerSoft\GaugePresentationBundle\Model;
 
-interface MultipleChoiceAnswerInterface extends AnswerInterface {
+interface ScaleAnswerInterface extends AnswerInterface {
 
 	public function getAnswer();
 

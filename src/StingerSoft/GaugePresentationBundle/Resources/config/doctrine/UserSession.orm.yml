@@ -1,0 +1,17 @@
+StingerSoft\GaugePresentationBundle\Entity\UserSession:
+  type:  entity
+#  repositoryClass: StingerSoft\GaugePresentationBundle\Repository\ORM\PresentationRepository
+  inheritanceType: JOINED
+  discriminatorColumn:
+    name: discr
+    type: string
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  manyToOne:
+    activePresentation:
+      targetEntity: Presentation
+  manyToMany:
+    answeredSlides:
+      targetEntity: Slide

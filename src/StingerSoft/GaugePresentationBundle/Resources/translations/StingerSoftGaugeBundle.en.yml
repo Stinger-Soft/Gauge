@@ -7,4 +7,6 @@ stinger_soft_gauge:
       presentations: Presentations
       styles: Styling options
       settings: Account settings
-      
+  presentation:
+    index:
+      join_text: "Visit http://gauge.example and enter %presentation_id%"

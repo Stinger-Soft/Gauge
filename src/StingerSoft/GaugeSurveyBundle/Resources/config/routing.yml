@@ -1,0 +1,3 @@
+stinger_soft_gauge_survey_homepage:
+    path:     /slide/{slide}
+    defaults: { _controller: StingerSoftGaugeSurveyBundle:Default:question}

@@ -1,0 +1,10 @@
+StingerSoft\GaugePresentationBundle\Entity\Answer:
+  type:  entity
+  inheritanceType: JOINED
+  discriminatorColumn:
+    name: discr
+    type: string
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }

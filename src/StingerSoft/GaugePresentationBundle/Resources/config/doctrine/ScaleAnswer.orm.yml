@@ -1,4 +1,4 @@
-StingerSoft\GaugePresentationBundle\Entity\MultipleChoiceAnswer:
+StingerSoft\GaugePresentationBundle\Entity\ScaleAnswer:
   type:  entity
   fields:
     answer:
@@ -7,5 +7,5 @@ StingerSoft\GaugePresentationBundle\Entity\MultipleChoiceAnswer:
       nullable: true
   manyToOne:
     question:
-      targetEntity: MultipleChoice
+      targetEntity: Scale
       inversedBy: answers

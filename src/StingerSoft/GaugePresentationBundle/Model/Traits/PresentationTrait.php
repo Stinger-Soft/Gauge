@@ -1,6 +1,8 @@
 <?php
 
-namespace StingerSoft\GaugePresentationBundle\Model;
+namespace StingerSoft\GaugePresentationBundle\Model\Traits;
+
+use StingerSoft\GaugePresentationBundle\Model\SlideInterface;
 
 trait PresentationTrait {
 

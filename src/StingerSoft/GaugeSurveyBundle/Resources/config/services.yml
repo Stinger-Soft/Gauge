@@ -1,0 +1,4 @@
+services:
+#    stinger_soft_gauge_survey.example:
+#        class: StingerSoft\GaugeSurveyBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
