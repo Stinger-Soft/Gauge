@@ -8,4 +8,8 @@ use StingerSoft\GaugePresentationBundle\Model\Traits\ScaleTrait;
 class Scale extends Slide implements ScaleInterface {
 	
 	use ScaleTrait;
+
+	public function newVoteInstance() {
+		return null;
+	}
 }

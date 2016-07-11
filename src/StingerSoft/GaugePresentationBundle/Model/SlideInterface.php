@@ -26,4 +26,9 @@ interface SlideInterface extends Identifiable, Trackable {
 	public function getAnswers();
 	
 	public function setAnswers($answers);
+	
+	/**
+	 * @return VoteInterface
+	 */
+	public function newVoteInstance();
 }

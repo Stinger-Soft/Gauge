@@ -2,14 +2,14 @@
 
 namespace StingerSoft\GaugePresentationBundle\Form;
 
-use Symfony\Component\Form\AbstractType;
-use Symfony\Component\OptionsResolver\OptionsResolver;
+use Doctrine\ORM\EntityRepository;
 use StingerSoft\GaugePresentationBundle\Model\MultipleChoiceInterface;
-use Symfony\Component\Form\FormBuilderInterface;
 use StingerSoft\GaugePresentationBundle\Model\MultipleChoiceVoteInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use StingerSoft\GaugePresentationBundle\Model\MultipleChoiceAnswerInterface;
+use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class MultipleChoiceType extends AbstractType {
 
@@ -22,7 +22,10 @@ class MultipleChoiceType extends AbstractType {
 		$builder->add('answers', EntityType::class, array(
 			'expanded' => true,
 			'multiple' => $slide->getAllowMultiple(),
-			'class' => $slide->getAnswerClassName(), 
+			'class' => $slide->getAnswerClassName(),
+			'query_builder' => function (EntityRepository $repos) use ($slide) {
+				return $repos->createQueryBuilder('answer')->where('answer.question = :slide')->setParameter('slide', $slide);
+			} 
 		));
 		$builder->add('submit', SubmitType::class);
 	}

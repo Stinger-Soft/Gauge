@@ -25,4 +25,6 @@ trait MultipleChoiceTrait {
 		$this->showResultInPercentage = $showResultInPercentage;
 		return $this;
 	}
+	
+
 }

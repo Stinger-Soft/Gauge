@@ -2,11 +2,11 @@
 
 namespace StingerSoft\GaugePresentationBundle\Model;
 
-interface MultipleChoiceVoteInterface extends VoteInterface {
+interface StringVoteInterface extends VoteInterface {
 
 	/**
 	 *
-	 * @param MultipleChoiceAnswerInterface[] $answers        	
+	 * @param string[] $answers        	
 	 */
 	public function setAnswers($answers);
 

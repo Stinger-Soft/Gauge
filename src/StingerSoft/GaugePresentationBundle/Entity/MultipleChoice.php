@@ -8,8 +8,13 @@ use StingerSoft\GaugePresentationBundle\Model\Traits\MultipleChoiceTrait;
 class MultipleChoice extends Slide implements MultipleChoiceInterface {
 	
 	use MultipleChoiceTrait;
-	
-	public function getAnswerClassName(){
+
+	public function getAnswerClassName() {
 		return MultipleChoiceAnswer::class;
+	}
+
+	public function newVoteInstance() {
+		$vote = new MultipleChoiceVote();
+		return $vote;
 	}
 }

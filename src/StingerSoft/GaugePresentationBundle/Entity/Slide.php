@@ -6,7 +6,7 @@ use StingerSoft\GaugePresentationBundle\Model\SlideInterface;
 use StingerSoft\GaugePresentationBundle\Model\Traits\SlideTrait;
 use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 
-class Slide implements SlideInterface {
+abstract class Slide implements SlideInterface {
 	use SlideTrait;
 	use ORMBehaviors\Blameable\Blameable;
 	use ORMBehaviors\Sortable\Sortable;

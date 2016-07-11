@@ -1,0 +1,16 @@
+StingerSoft\GaugePresentationBundle\Entity\Vote:
+  type:  entity
+#  repositoryClass: StingerSoft\GaugePresentationBundle\Repository\SlideRepository
+  inheritanceType: JOINED
+  discriminatorColumn:
+    name: discr
+    type: string
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  manyToOne:
+    slide:
+      targetEntity: Slide
+    userSession:
+      targetEntity: UserSession

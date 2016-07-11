@@ -82,11 +82,11 @@ class BaseController extends PlatformController {
 	 * @return SlideInterface
 	 */
 	protected function getSlideById($slideId, $throw404 = true) {
-		$presentation = $this->getSlideRepository()->find($slideId);
-		if(!$presentation && $throw404) {
+		$slide = $this->getSlideRepository()->find($slideId);
+		if(!$slide && $throw404) {
 			throw $this->createNotFoundException();
 		}
-		return $presentation;
+		return $slide;
 	}
 
 	/**
@@ -96,7 +96,7 @@ class BaseController extends PlatformController {
 	 */
 	protected function getUserSession(SessionInterface $session, PresentationInterface $presentation, $create = false) {
 		$sessionId = $session->get('gauge_session_id');
-		$userSession = $sessionId ? $this->getSessionById($sessionId) : null;
+		$userSession = $sessionId ? $this->getSessionById($sessionId, !$create) : null;
 		if($userSession)
 			return $userSession;
 		

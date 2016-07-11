@@ -8,6 +8,7 @@ use StingerSoft\GaugePresentationBundle\Model\Enums\Pace;
 use StingerSoft\GaugePresentationBundle\Model\Enums\Privacy;
 use StingerSoft\PlatformBundle\DataFixtures\AbstractStingerFixture;
 use StingerSoft\GaugePresentationBundle\Entity\MultipleChoiceAnswer;
+use StingerSoft\GaugePresentationBundle\Entity\WordCloud;
 
 class ExamplePresentation extends AbstractStingerFixture {
 
@@ -37,7 +38,17 @@ class ExamplePresentation extends AbstractStingerFixture {
 		$multipleChoiceSlideAnswer->setQuestion($multipleChoiceSlide);
 		$this->manager->persist($multipleChoiceSlideAnswer);
 		$this->manager->flush();
+		
+		
+		$wordCloud = new WordCloud();
+		$wordCloud->setAnswerCount(3);
+		$wordCloud->setQuestion('Nenne bis zu 3 Biersorten');
+		$wordCloud->setPresentation($presentation);
+		$this->manager->persist($wordCloud);
+		$this->manager->flush();
 	}
+	
+	
 
 	/**
 	 *

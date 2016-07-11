@@ -1,0 +1,6 @@
+StingerSoft\GaugePresentationBundle\Entity\StringVote:
+  type:  entity
+  fields:
+    answers:
+      type: simple_array
+      nullable: true

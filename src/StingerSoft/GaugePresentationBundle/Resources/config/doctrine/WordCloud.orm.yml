@@ -1,0 +1,7 @@
+StingerSoft\GaugePresentationBundle\Entity\WordCloud:
+  type:  entity
+  fields:
+    count:
+      column: maximumAnswerCount
+      type: integer
+      nullable: true

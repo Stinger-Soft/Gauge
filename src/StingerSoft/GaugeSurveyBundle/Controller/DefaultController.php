@@ -4,6 +4,8 @@ namespace StingerSoft\GaugeSurveyBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use StingerSoft\GaugePresentationBundle\Form\MultipleChoiceType;
+use StingerSoft\GaugePresentationBundle\Form\WordCountType;
+use StingerSoft\GaugePresentationBundle\Entity\StringVote;
 
 class DefaultController extends BaseController {
 	
@@ -18,16 +20,22 @@ class DefaultController extends BaseController {
 	public function questionAction(Request $request, $slide) {
 		$slide = $this->getSlideById($slide);
 		
-		$session = $this->getUserSession($request->getSession(), $slide->getPresentation());
+		$session = $this->getUserSession($request->getSession(), $slide->getPresentation(), true);
 		
 		$formClass = MultipleChoiceType::class; // $this->getSlideService($slide)->getUserForm();
+// 		$formClass = WordCountType::class;
 		
-		$form = $this->createForm($formClass, null, array(
+		$vote = $slide->newVoteInstance();
+		$vote->setSlide($slide);
+		$vote->setUserSession($session);
+		
+		$form = $this->createForm($formClass, $vote, array(
 			'slide' => $slide 
 		));
 		
 		if($request->isMethod('POST')) {
 			$form->handleRequest($request);
+			dump($vote);
 			if($form->isValid()) {
 				$presentation = $slide->getPresentation();
 			}

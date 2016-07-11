@@ -1,0 +1,5 @@
+StingerSoft\GaugePresentationBundle\Entity\MultipleChoiceVote:
+  type:  entity
+  manyToMany:
+    answers:
+      targetEntity: MultipleChoiceAnswer
