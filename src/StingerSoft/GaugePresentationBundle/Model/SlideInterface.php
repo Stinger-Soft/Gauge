@@ -31,4 +31,8 @@ interface SlideInterface extends Identifiable, Trackable {
 	 * @return VoteInterface
 	 */
 	public function newVoteInstance();
+	
+	
+	public function getFormType();
+	
 }

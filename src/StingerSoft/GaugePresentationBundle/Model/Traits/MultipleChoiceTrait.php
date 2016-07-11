@@ -2,6 +2,8 @@
 
 namespace StingerSoft\GaugePresentationBundle\Model\Traits;
 
+use StingerSoft\GaugePresentationBundle\Form\MultipleChoiceType;
+
 trait MultipleChoiceTrait {
 
 	protected $allowMultiple;
@@ -24,6 +26,10 @@ trait MultipleChoiceTrait {
 	public function setShowResultInPercentage($showResultInPercentage) {
 		$this->showResultInPercentage = $showResultInPercentage;
 		return $this;
+	}
+	
+	public function getFormType(){
+		return MultipleChoiceType::class;
 	}
 	
 

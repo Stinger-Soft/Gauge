@@ -47,4 +47,8 @@ trait ScaleTrait {
 		$this->highLabel = $highLabel;
 		return $this;
 	}
+	
+	public function getFormType(){
+		return null;
+	}
 }

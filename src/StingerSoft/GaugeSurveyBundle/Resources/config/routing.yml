@@ -1,3 +1,11 @@
 stinger_soft_gauge_survey_homepage:
+    path:     /presentation/{presentation}
+    defaults: { _controller: StingerSoftGaugeSurveyBundle:Default:presentation}
+    
+stinger_soft_gauge_survey_slide:
     path:     /slide/{slide}
     defaults: { _controller: StingerSoftGaugeSurveyBundle:Default:question}
+    
+stinger_soft_gauge_survey_next_slide:
+    path:     /next/slide/{slide}
+    defaults: { _controller: StingerSoftGaugeSurveyBundle:Default:nextSlide}

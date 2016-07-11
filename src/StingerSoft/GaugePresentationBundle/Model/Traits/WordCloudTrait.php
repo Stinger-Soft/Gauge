@@ -2,6 +2,8 @@
 
 namespace StingerSoft\GaugePresentationBundle\Model\Traits;
 
+use StingerSoft\GaugePresentationBundle\Form\WordCloudType;
+
 trait WordCloudTrait {
 
 	protected $count;
@@ -12,5 +14,9 @@ trait WordCloudTrait {
 
 	public function setAnswerCount($count) {
 		$this->count = $count;
+	}
+	
+	public function getFormType(){
+		return WordCloudType::class;
 	}
 }

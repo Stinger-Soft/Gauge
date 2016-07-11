@@ -14,3 +14,8 @@ StingerSoft\GaugePresentationBundle\Entity\Vote:
       targetEntity: Slide
     userSession:
       targetEntity: UserSession
+  uniqueConstraints:
+    single_vote:
+      columns:
+        - slide_id
+        - user_session_id

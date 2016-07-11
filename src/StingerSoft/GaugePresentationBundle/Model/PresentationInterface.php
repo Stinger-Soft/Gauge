@@ -72,4 +72,10 @@ interface PresentationInterface extends Identifiable, Trackable {
 	 * @return \Doctrine\Common\Collections\Collection|SlideInterface[]
 	 */
 	public function getSlides();
+	
+	/**
+	 * @param SlideInterface $prevSlide
+	 * @return SlideInterface|null
+	 */
+	public function getNextSlide(SlideInterface $prevSlide);
 }

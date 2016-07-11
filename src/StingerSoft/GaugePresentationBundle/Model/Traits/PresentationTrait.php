@@ -113,4 +113,17 @@ trait PresentationTrait {
 	public function getSlides() {
 		return $this->slides;
 	}
+
+	public function getNextSlide(SlideInterface $prevSlide) {
+		$found = false;
+		foreach($this->getSlides() as $slide) {
+			if($found) {
+				return $slide;
+			}
+			if($slide == $prevSlide) {
+				$found = true;
+			}
+		}
+		return null;
+	}
 }
