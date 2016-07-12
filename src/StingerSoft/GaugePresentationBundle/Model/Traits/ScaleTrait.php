@@ -2,6 +2,8 @@
 
 namespace StingerSoft\GaugePresentationBundle\Model\Traits;
 
+use StingerSoft\GaugePresentationBundle\Form\ScaleType;
+
 trait ScaleTrait {
 
 	protected $lowValue;
@@ -13,7 +15,7 @@ trait ScaleTrait {
 	protected $highLabel;
 
 	public function getLowValue() {
-		return $this->lowValue;
+		return $this->lowValue ?: 1;
 	}
 
 	public function setLowValue($lowValue) {
@@ -31,7 +33,7 @@ trait ScaleTrait {
 	}
 
 	public function getHighValue() {
-		return $this->highValue;
+		return $this->highValue ?: 10;
 	}
 
 	public function setHighValue($highValue) {
@@ -47,8 +49,8 @@ trait ScaleTrait {
 		$this->highLabel = $highLabel;
 		return $this;
 	}
-	
-	public function getFormType(){
-		return null;
+
+	public function getFormType() {
+		return ScaleType::class;
 	}
 }

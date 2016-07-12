@@ -1,0 +1,6 @@
+StingerSoft\GaugePresentationBundle\Entity\ScaleVote:
+  type:  entity
+  manyToMany:
+    ratings:
+      targetEntity: RatedVote
+      cascade: ['persist', 'remove']

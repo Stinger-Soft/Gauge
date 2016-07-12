@@ -10,5 +10,8 @@ interface MultipleChoiceVoteInterface extends VoteInterface {
 	 */
 	public function setAnswers($answers);
 
+	/**
+	 * @return MultipleChoiceAnswerInterface[]
+	 */
 	public function getAnswers();
 }

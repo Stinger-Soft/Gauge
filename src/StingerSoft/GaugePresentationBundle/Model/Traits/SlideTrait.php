@@ -15,6 +15,11 @@ trait SlideTrait {
 	protected $presentation;
 
 	protected $answers;
+	
+	/**
+	 * @var VoteInterface[]
+	 */
+	protected $votes;
 
 	public function getId() {
 		return $this->id;
@@ -50,6 +55,25 @@ trait SlideTrait {
 	public function __toString() {
 		return $this->question;
 	}
+
+	public function getDescription() {
+		return $this->description;
+	}
+
+	public function setDescription($description) {
+		$this->description = $description;
+		return $this;
+	}
+
+	public function getVotes() {
+		return $this->votes;
+	}
+
+	public function setVotes($votes) {
+		$this->votes = $votes;
+		return $this;
+	}
+	
 
 
 }

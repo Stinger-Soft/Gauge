@@ -1,0 +1,27 @@
+.form #multiple_choice_answers {
+	
+	.radio {
+		padding-top: 1vw;
+		padding-bottom: 1vw;
+		
+		& + .radio {
+			border-top: 1px solid #ccc;
+		}
+		
+		label {
+			font-size: 1vw;
+		}
+		
+		input[type="radio"] {
+			
+		}
+	}
+
+}
+
+
+.form {
+	input[type=submit] {
+		display: block;
+	}
+}

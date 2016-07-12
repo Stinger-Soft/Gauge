@@ -9,6 +9,8 @@ use StingerSoft\GaugePresentationBundle\Model\Enums\Privacy;
 use StingerSoft\PlatformBundle\DataFixtures\AbstractStingerFixture;
 use StingerSoft\GaugePresentationBundle\Entity\MultipleChoiceAnswer;
 use StingerSoft\GaugePresentationBundle\Entity\WordCloud;
+use StingerSoft\GaugePresentationBundle\Entity\Scale;
+use StingerSoft\GaugePresentationBundle\Entity\ScaleAnswer;
 
 class ExamplePresentation extends AbstractStingerFixture {
 
@@ -45,6 +47,31 @@ class ExamplePresentation extends AbstractStingerFixture {
 		$wordCloud->setQuestion('Nenne bis zu 3 Biersorten');
 		$wordCloud->setPresentation($presentation);
 		$this->manager->persist($wordCloud);
+		$this->manager->flush();
+		
+		
+		$scale = new Scale();
+		$scale->setQuestion('Rate a beer');
+		$scale->setPresentation($presentation);
+		$this->manager->persist($scale);
+		$this->manager->flush();
+		
+		$scaleAnswer = new ScaleAnswer();
+		$scaleAnswer->setAnswer('Haake Beck');
+		$scaleAnswer->setQuestion($scale);
+		$this->manager->persist($scaleAnswer);
+		$this->manager->flush();
+		
+		$scaleAnswer = new ScaleAnswer();
+		$scaleAnswer->setAnswer('Hemelinger');
+		$scaleAnswer->setQuestion($scale);
+		$this->manager->persist($scaleAnswer);
+		$this->manager->flush();
+		
+		$scaleAnswer = new ScaleAnswer();
+		$scaleAnswer->setAnswer('Beck\'s');
+		$scaleAnswer->setQuestion($scale);
+		$this->manager->persist($scaleAnswer);
 		$this->manager->flush();
 	}
 	

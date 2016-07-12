@@ -17,6 +17,9 @@ trait MultipleChoiceVoteTrait {
 	}
 
 	public function setAnswers($answers) {
+		if($answers instanceof MultipleChoiceAnswerInterface){
+			$answers = array($answers);
+		}
 		$this->answers = $answers;
 		return $this;
 	}

@@ -21,3 +21,7 @@ StingerSoft\GaugePresentationBundle\Entity\Slide:
     presentation:
       targetEntity: Presentation
       inversedBy: slides
+  oneToMany:
+    votes:
+      targetEntity: Vote
+      mappedBy: slide

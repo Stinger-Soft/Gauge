@@ -1,0 +1,14 @@
+StingerSoft\GaugePresentationBundle\Entity\RatedVote:
+  type:  entity
+#  repositoryClass: StingerSoft\GaugePresentationBundle\Repository\SlideRepository
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    rating:
+      type: integer
+      nullable: true
+  manyToOne:
+    answer:
+      targetEntity: Answer

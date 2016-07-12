@@ -12,6 +12,7 @@ StingerSoft\GaugePresentationBundle\Entity\Vote:
   manyToOne:
     slide:
       targetEntity: Slide
+      inversedBy: votes
     userSession:
       targetEntity: UserSession
   uniqueConstraints:

@@ -35,4 +35,5 @@ class MultipleChoiceType extends AbstractType {
 		$resolver->setRequired('slide');
 		$resolver->addAllowedTypes('slide', MultipleChoiceInterface::class);
 	}
+
 }

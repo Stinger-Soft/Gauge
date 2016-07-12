@@ -1,0 +1,56 @@
+{% trans_default_domain 'StingerSoftGaugeBundle' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Oliver Kotte, Florian Meyer">
+<title>{% block title %}{% endblock %} - {{ theme.brandName }}</title>
+
+
+{% block stylesheets %}
+
+{% stylesheets filter="cssrewrite"
+	'bundles/bmatznerfontawesome/css/font-awesome.min.css'
+	'bundles/stingersoftplatform/scss/bootstrap.scss'
+	'bundles/stingersoftplatform/scss/components.scss'
+	'bundles/stingersoftgaugesurvey/scss/forms.scss'
+%}
+	<link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
+{% endstylesheets %}
+
+{% endblock stylesheets %}
+
+{% block javascripts_head %}
+    {% javascripts
+        '@header_js' 
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock javascripts_head %}
+</head>
+<body>
+{% block body %}
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<img src="{{ asset(theme.getBrandImage) }}" alt="{{ 'stinger_soft_gauge.layout.brand'|trans }}" class="pull-left" />
+			<h1 class="page-title">{{ theme.brandName }}</h1>
+		</div>
+	</div>
+	{% block content %}
+		<div class="row">
+			<div class="col-md-12">
+				<h3 class="question">{% block question %}{% endblock %}</h3>
+				<h4 class="description">{% block description %}{{ slide.description }}{% endblock %}</h4>
+				<div class="form">
+					{% block form_container %}{% endblock %}
+				</div>
+			</div>
+		</div>
+	{% endblock content %}
+</div>
+{% endblock body %}
+</body>
+</html>

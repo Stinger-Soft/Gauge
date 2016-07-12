@@ -1,2 +1,17 @@
-<h1>{{ slide }}</h1>
-{{ form(form) }}
+{% extends theme.surveyLayoutTemplate %}
+
+{% block title %}{{ slide }}{% endblock %}
+{% block question %}{{ slide }}{% endblock %}
+{% block description %}{{ slide.description|default('') }}{% endblock %}
+
+{% block form_container %}
+{% form_theme form theme.formTheme %}
+{{ form_start(form) }}
+{% if form.answers is defined %}
+{{ form_widget(form.answers) }}
+{% else %}
+{{ form_widget(form.ratings) }}
+{% endif %}
+{{ form_widget(form.submit) }}
+{{ form_end(form) }}
+{% endblock form_container %}

@@ -15,6 +15,10 @@ use StingerSoft\GaugePresentationBundle\Repository\UserSessionRepositoryInterfac
 use StingerSoft\GaugePresentationBundle\Services\SlideService;
 use StingerSoft\PlatformBundle\Controller\BaseController as PlatformController;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use StingerSoft\GaugePresentationBundle\Services\Slides\MultipleChoiceService;
+use StingerSoft\GaugePresentationBundle\Services\Slides\WordCloudService;
+use StingerSoft\GaugePresentationBundle\Services\Slides\ScaleService;
+use Doctrine\Common\Util\ClassUtils;
 
 class BaseController extends PlatformController {
 
@@ -119,10 +123,24 @@ class BaseController extends PlatformController {
 	}
 
 	/**
+	 * 
+	 * Should be replaced by compiler pass
 	 *
 	 * @param SlideInterface $slide        	
 	 * @return SlideService
 	 */
 	protected function getSlideService(SlideInterface $slide) {
+		$services = array(
+			new MultipleChoiceService(),
+			new ScaleService(),
+			new WordCloudService(),
+		);
+		foreach($services as $service){
+			$reflClass = ClassUtils::newReflectionClass($slide);			
+			if($reflClass->implementsInterface($service->getSupportedSlideType())){
+				return $service;
+			}
+		}
+		return null;
 	}
 }
