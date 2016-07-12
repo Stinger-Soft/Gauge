@@ -14,18 +14,12 @@
     {{ form_widget(form.ratings) }}
 {% endif %}
 
-
-
 {% if form.submit is defined %}
     {{ form_widget(form.submit) }}
 {% else %}
 	<div class="alert alert-warning">You already voted!</div>
     {{ form_widget(form.skip) }}
 {% endif %}
-
-
-
-
 
 {{ form_end(form) }}
 {% endblock form_container %}

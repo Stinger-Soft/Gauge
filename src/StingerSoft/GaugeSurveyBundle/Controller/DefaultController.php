@@ -58,7 +58,7 @@ class DefaultController extends BaseController {
 			}
 		}
 		
-		return $this->render('StingerSoftGaugeSurveyBundle:MultipleChoice:slide.html.twig', array(
+		return $this->render('StingerSoftGaugeSurveyBundle:Default:slide.html.twig', array(
 			'form' => $form->createView(),
 			'slide' => $slide 
 		));
