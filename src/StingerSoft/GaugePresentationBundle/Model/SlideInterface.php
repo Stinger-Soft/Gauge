@@ -45,11 +45,4 @@ interface SlideInterface extends Identifiable, Trackable {
 	 */
 	public function setVotes($votes);
 
-	/**
-	 *
-	 * @return VoteInterface
-	 */
-	public function newVoteInstance();
-
-	public function getFormType();
 }

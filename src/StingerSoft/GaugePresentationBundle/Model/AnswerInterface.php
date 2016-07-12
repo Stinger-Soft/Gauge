@@ -9,4 +9,6 @@ interface AnswerInterface extends Identifiable {
 	public function getQuestion();
 
 	public function setQuestion(SlideInterface $question);
+	
+	public function __toString();
 }

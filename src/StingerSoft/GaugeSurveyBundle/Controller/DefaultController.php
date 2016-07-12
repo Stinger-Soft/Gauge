@@ -7,6 +7,13 @@ use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends BaseController {
 
+	/**
+	 * Starts the given presentation
+	 *
+	 * @param Request $request        	
+	 * @param integer $presentation        	
+	 * @return \Symfony\Component\HttpFoundation\RedirectResponse
+	 */
 	public function presentationAction(Request $request, $presentation) {
 		$presentation = $this->getPresentationById($presentation);
 		return $this->redirectToRoute('stinger_soft_gauge_survey_slide', array(
@@ -14,6 +21,12 @@ class DefaultController extends BaseController {
 		));
 	}
 
+	/**
+	 *
+	 * @param Request $request        	
+	 * @param integer $slide        	
+	 * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+	 */
 	public function questionAction(Request $request, $slide) {
 		$slide = $this->getSlideById($slide);
 		
@@ -26,15 +39,19 @@ class DefaultController extends BaseController {
 		$vote = $service->getVoteInstance($session, $slide);
 		
 		$form = $this->createForm($formClass, $vote, array(
-			'slide' => $slide 
+			'slide' => $slide,
+			'skip' => $service->hasUserVoted($session, $slide),
 		));
 		
 		if($request->isMethod('POST')) {
 			$form->handleRequest($request);
 			if($form->isValid()) {
-				$om = $this->getDoctrine()->getManagerForClass(ClassUtils::getClass($vote));
-				$om->persist($vote);
-				$om->flush();
+				
+				if($form->has('submit') && $form->get('submit')->isClicked()){
+					$om = $this->getDoctrine()->getManagerForClass(ClassUtils::getClass($vote));
+					$om->persist($vote);
+					$om->flush();
+				}
 				return $this->redirectToRoute('stinger_soft_gauge_survey_next_slide', array(
 					'slide' => $slide->getId() 
 				));
@@ -63,7 +80,7 @@ class DefaultController extends BaseController {
 		
 		if($slide === null) {
 			return $this->redirectToRoute('stinger_soft_gauge_survey_thanks', array(
-				'presentation' => $presentation->getId(),
+				'presentation' => $presentation->getId() 
 			));
 		}
 		

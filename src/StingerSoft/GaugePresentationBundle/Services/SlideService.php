@@ -57,6 +57,14 @@ interface SlideService {
 	public function getVoteImplementation();
 
 	/**
+	 * Checks whether the user has already voted on the given slide
+	 *
+	 * @param UserSessionInterface $session        	
+	 * @param SlideInterface $slide        	
+	 */
+	public function hasUserVoted(UserSessionInterface $session, SlideInterface $slide);
+
+	/**
 	 * Returns true if this service is configured to handle ORM entities
 	 *
 	 * @return boolean

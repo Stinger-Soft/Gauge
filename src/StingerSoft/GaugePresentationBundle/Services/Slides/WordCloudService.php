@@ -4,8 +4,10 @@ namespace StingerSoft\GaugePresentationBundle\Services\Slides;
 
 use StingerSoft\GaugePresentationBundle\Entity\StringVote;
 use StingerSoft\GaugePresentationBundle\Entity\WordCloud;
+use StingerSoft\GaugePresentationBundle\Form\WordCloudType;
 use StingerSoft\GaugePresentationBundle\Model\Session\UserSessionInterface;
 use StingerSoft\GaugePresentationBundle\Model\SlideInterface;
+use StingerSoft\GaugePresentationBundle\Model\StringVoteInterface;
 use StingerSoft\GaugePresentationBundle\Model\WordCloudInterface;
 
 /**
@@ -20,7 +22,7 @@ class WordCloudService extends AbstractSlideService {
 	 * @see \StingerSoft\GaugePresentationBundle\Services\SlideService::getUserForm()
 	 */
 	public function getUserForm() {
-		return WordCloudInterface::class;
+		return WordCloudType::class;
 	}
 
 	/**
@@ -40,8 +42,14 @@ class WordCloudService extends AbstractSlideService {
 	 */
 	public function getVoteInstance(UserSessionInterface $session, SlideInterface $slide) {
 		if($slide instanceof WordCloudInterface) {
+			/**
+			 *
+			 * @var StringVoteInterface $vote
+			 */
 			$vote = parent::getVoteInstance($session, $slide);
-			$vote->setAnswers(\array_fill(0, $slide->getAnswerCount(), ''));
+			if(!$vote->getId()){
+				$vote->setAnswers(\array_fill(0, $slide->getAnswerCount(), ''));
+			}
 			return $vote;
 		}
 	}

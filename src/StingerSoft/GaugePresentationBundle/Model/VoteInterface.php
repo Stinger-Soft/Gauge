@@ -12,6 +12,9 @@ interface VoteInterface extends Identifiable, Trackable {
 
 	public function setSlide(SlideInterface $slide);
 
+	/**
+	 * @return  UserSessionInterface
+	 */
 	public function getUserSession();
 
 	public function setUserSession(UserSessionInterface $session);

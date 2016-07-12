@@ -27,13 +27,20 @@ class MultipleChoiceType extends AbstractType {
 				return $repos->createQueryBuilder('answer')->where('answer.question = :slide')->setParameter('slide', $slide);
 			} 
 		));
-		$builder->add('submit', SubmitType::class);
 	}
 
 	public function configureOptions(OptionsResolver $resolver) {
 		$resolver->setDefault('class', MultipleChoiceVoteInterface::class);
-		$resolver->setRequired('slide');
 		$resolver->addAllowedTypes('slide', MultipleChoiceInterface::class);
 	}
 
+	/**
+	 *
+	 * {@inheritdoc}
+	 *
+	 * @see \Symfony\Component\Form\AbstractType::getParent()
+	 */
+	public function getParent() {
+		return SlideType::class;
+	}
 }

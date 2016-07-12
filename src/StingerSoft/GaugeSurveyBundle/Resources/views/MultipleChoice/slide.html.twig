@@ -7,11 +7,25 @@
 {% block form_container %}
 {% form_theme form theme.formTheme %}
 {{ form_start(form) }}
+
 {% if form.answers is defined %}
-{{ form_widget(form.answers) }}
+    {{ form_widget(form.answers) }}
 {% else %}
-{{ form_widget(form.ratings) }}
+    {{ form_widget(form.ratings) }}
 {% endif %}
-{{ form_widget(form.submit) }}
+
+
+
+{% if form.submit is defined %}
+    {{ form_widget(form.submit) }}
+{% else %}
+	<div class="alert alert-warning">You already voted!</div>
+    {{ form_widget(form.skip) }}
+{% endif %}
+
+
+
+
+
 {{ form_end(form) }}
 {% endblock form_container %}

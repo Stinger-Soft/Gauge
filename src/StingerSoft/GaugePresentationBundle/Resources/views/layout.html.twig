@@ -1,4 +1,4 @@
-{% trans_default_domain 'StingerSoftGaugeBundle' %}
+{% trans_default_domain 'StingerSoftGaugePresentationBundle' %}
 <!DOCTYPE html>
 <html lang=en>
 <head>
@@ -45,7 +45,7 @@
 				</button>
 				<a href="/" class="navbar-brand">
 					{% image '@StingerSoftGaugePresentationBundle/Resources/public/img/brand.png' %}
-						<img src="{{ asset_url }}" alt="{{ 'stinger_soft_gauge.layout.brand'|trans }}" />
+						<img src="{{ asset_url }}" alt="{{ 'stinger_soft_gauge_presentation.layout.brand'|trans }}" />
 					{% endimage %}
 				</a>
 			</div>
@@ -54,19 +54,19 @@
 					<li class="active">
 						<a href="{{ path('stinger_soft_gauge_presentation_homepage') }}">
 							<i class="fa fa-fw fa-home"></i>
-							{{ 'stinger_soft_gauge.layout.menu.presentations'|trans }}
+							{{ 'stinger_soft_gauge_presentation.layout.menu.presentations'|trans }}
 						</a>
 					</li>
 					<li>
 						<a href="/">
 							<i class="fa fa-fw fa-paint-brush"></i>
-							{{ 'stinger_soft_gauge.layout.menu.styles'|trans }}
+							{{ 'stinger_soft_gauge_presentation.layout.menu.styles'|trans }}
 						</a>
 					</li>
 					<li>
 						<a href="/">
 							<i class="fa fa-fw fa-cog"></i>
-							{{ 'stinger_soft_gauge.layout.menu.settings'|trans }}
+							{{ 'stinger_soft_gauge_presentation.layout.menu.settings'|trans }}
 						</a>
 					</li>
 				</ul>

@@ -9,6 +9,7 @@ use StingerSoft\GaugePresentationBundle\Model\ScaleInterface;
 use StingerSoft\GaugePresentationBundle\Model\Session\UserSessionInterface;
 use StingerSoft\GaugePresentationBundle\Model\SlideInterface;
 use StingerSoft\GaugePresentationBundle\Model\WordCloudInterface;
+use StingerSoft\GaugePresentationBundle\Entity\RatedVote;
 
 /**
  * Service to handle scale slides
@@ -41,9 +42,17 @@ class ScaleService extends AbstractSlideService {
 	 * @see \StingerSoft\GaugePresentationBundle\Services\Slides\AbstractSlideService::getVoteInstance()
 	 */
 	public function getVoteInstance(UserSessionInterface $session, SlideInterface $slide) {
-		if($slide instanceof WordCloudInterface) {
+		if($slide instanceof ScaleInterface) {
 			$vote = parent::getVoteInstance($session, $slide);
-			$vote->setAnswers(\array_fill(0, $slide->getAnswerCount(), ''));
+			if($vote->getId())
+				return $vote;
+			$ratings = array();
+			foreach($slide->getAnswers() as $answer) {
+				$rVote = new RatedVote();
+				$rVote->setAnswer($answer);
+				$ratings[] = $rVote;
+			}
+			$vote->setRatings($ratings);
 			return $vote;
 		}
 	}

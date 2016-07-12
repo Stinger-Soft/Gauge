@@ -1,4 +1,4 @@
-{% trans_default_domain 'StingerSoftGaugeBundle' %}
+{% trans_default_domain 'StingerSoftGaugePresentationBundle' %}
 {% extends 'StingerSoftGaugePresentationBundle::layout.html.twig' %}
 
 {% block stylesheets %}
@@ -26,7 +26,7 @@
 {% block body %}
 	<header id="join_header">
 		<div class="container-fluid">
-			<h1>{{ 'stinger_soft_gauge.presentation.index.join_text'|trans({'%presentation_id%': presentation.id})|raw }}</h1>
+			<h1>{{ 'stinger_soft_gauge_presentation.presentation.index.join_text'|trans({'%presentation_id%': presentation.id, '%url%':  (app.request.getSchemeAndHttpHost() ~ app.request.baseUrl)})|raw }}</h1>
 		</div>
 	</header>
 	<section id="body">

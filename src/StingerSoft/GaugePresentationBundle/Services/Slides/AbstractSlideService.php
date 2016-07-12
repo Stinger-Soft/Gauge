@@ -35,9 +35,32 @@ abstract class AbstractSlideService implements SlideService {
 	 *
 	 * {@inheritdoc}
 	 *
+	 * @see \StingerSoft\GaugePresentationBundle\Services\SlideService::hasUserVoted()
+	 */
+	public function hasUserVoted(UserSessionInterface $session, SlideInterface $slide) {
+		// TODO: Use repository to speed up this process
+		foreach($slide->getVotes() as $vote) {
+			if($vote->getUserSession() == $session)
+				return true;
+		}
+		return false;
+	}
+
+	/**
+	 *
+	 * {@inheritdoc}
+	 *
 	 * @see \StingerSoft\GaugePresentationBundle\Services\SlideService::getVoteInstance()
 	 */
 	public function getVoteInstance(UserSessionInterface $session, SlideInterface $slide) {
+		
+		// TODO: Use repository to speed up this process
+		foreach($slide->getVotes() as $vote) {
+			if($vote->getUserSession() == $session) {
+				return $vote;
+			}
+		}
+		
 		$voteClass = $this->getVoteImplementation();
 		$vote = new $voteClass();
 		$vote->setSlide($slide);

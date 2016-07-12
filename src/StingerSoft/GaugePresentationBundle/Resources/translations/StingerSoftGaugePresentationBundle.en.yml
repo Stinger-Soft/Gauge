@@ -1,4 +1,4 @@
-stinger_soft_gauge:
+stinger_soft_gauge_presentation:
   layout:
     brand: Gauge
     toggle_navigation: Toggle navigation
@@ -9,4 +9,10 @@ stinger_soft_gauge:
       settings: Account settings
   presentation:
     index:
-      join_text: "Visit http://gauge.example and enter %presentation_id%"
+      join_text: "Visit %url% and enter %presentation_id%"
+  forms:
+    slide:
+      submit:
+        label: Submit answer
+      skip:
+        label: Skip to next question
