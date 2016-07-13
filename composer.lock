@@ -2242,12 +2242,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Stinger-Soft/PlatformBundle.git",
-                "reference": "de8df0eba5a6ac10eb6dbf0f293c12af753a703e"
+                "reference": "922b9405e5ddc474f288b6be84af2de9a335ac28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Stinger-Soft/PlatformBundle/zipball/de8df0eba5a6ac10eb6dbf0f293c12af753a703e",
-                "reference": "de8df0eba5a6ac10eb6dbf0f293c12af753a703e",
+                "url": "https://api.github.com/repos/Stinger-Soft/PlatformBundle/zipball/922b9405e5ddc474f288b6be84af2de9a335ac28",
+                "reference": "922b9405e5ddc474f288b6be84af2de9a335ac28",
                 "shasum": ""
             },
             "require": {
@@ -2320,7 +2320,7 @@
             "keywords": [
                 "platform"
             ],
-            "time": "2016-07-04 13:58:54"
+            "time": "2016-07-13 15:17:19"
         },
         {
             "name": "swiftmailer/swiftmailer",
