@@ -7,7 +7,6 @@ use StingerSoft\GaugePresentationBundle\Model\MultipleChoiceInterface;
 use StingerSoft\GaugePresentationBundle\Model\MultipleChoiceVoteInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -29,6 +28,12 @@ class MultipleChoiceType extends AbstractType {
 		));
 	}
 
+	/**
+	 *
+	 * {@inheritdoc}
+	 *
+	 * @see \Symfony\Component\Form\AbstractType::configureOptions()
+	 */
 	public function configureOptions(OptionsResolver $resolver) {
 		$resolver->setDefault('class', MultipleChoiceVoteInterface::class);
 		$resolver->addAllowedTypes('slide', MultipleChoiceInterface::class);

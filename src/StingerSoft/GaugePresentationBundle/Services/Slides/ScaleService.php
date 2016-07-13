@@ -86,4 +86,13 @@ class ScaleService extends AbstractSlideService {
 	public function getVoteImplementation() {
 		return $this->isOrm() ? ScaleVote::class : null;
 	}
+
+	/**
+	 *
+	 * {@inheritdoc}
+	 *
+	 * @see \StingerSoft\GaugePresentationBundle\Services\SlideService::getPresentationRoute()
+	 */
+	public function getPresentationRoute() {
+	}
 }

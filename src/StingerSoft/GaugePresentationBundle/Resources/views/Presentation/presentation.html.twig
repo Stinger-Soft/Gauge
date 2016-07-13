@@ -2,72 +2,58 @@
 {% extends 'StingerSoftGaugePresentationBundle::layout.html.twig' %}
 
 {% block stylesheets %}
-	{{ parent() }}
+{{ parent() }}
 {% stylesheets filter="cssrewrite"
 	'bundles/stingersoftgaugepresentation/scss/themes/default.scss'
 %}
-	<link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
 {% endstylesheets %}
 {% endblock stylesheets %}
 
 {% block javascripts_body %}
-	{{ parent() }}
-	{% javascripts
+{{ parent() }}
+{% javascripts
 		'bundles/stingersoftamchart/scripts/amcharts.js'
 		'bundles/stingersoftamchart/scripts/pie.js'
+		'bundles/stingersoftamchart/scripts/radar.js'
+		'bundles/stingersoftamchart/scripts/serial.js'
 		'bundles/stingersoftamchart/scripts/themes/light.js'
 		'bundles/stingersoftamchart/scripts/plugins/animate/animate.js'
 		'bundles/stingersoftgaugepresentation/scripts/presentation.js'    
 	%}
-		<script src="{{ asset_url }}"></script>
-	{% endjavascripts %}
+<script src="{{ asset_url }}"></script>
+{% endjavascripts %}
 {% endblock javascripts_body %}
 
 
+{% block title %}
+{{presentation.title}}
+{% endblock %}
+
 {% block body %}
-	<header id="join_header">
-		<div class="container-fluid">
-			<h1>{{ 'stinger_soft_gauge_presentation.presentation.index.join_text'|trans({'%presentation_id%': presentation.id, '%url%':  (app.request.getSchemeAndHttpHost() ~ app.request.baseUrl)})|raw }}</h1>
-		</div>
-	</header>
-	<section id="body">
-		{% block content %}
-		<div class="container-fluid slide-container">
-			<div class="row slide-header">
-				<div class="col-md-10">
-					<h1 class="question-title">{% block question %}{% endblock %}</h1>
-				</div>
-				<div class="col-md-2">
-					<h1 class="logo-container">{% block logo_container %}{% endblock %}</h1>
-				</div>
-			</div>
-			<div class="row slide-content">
-			{% block slide_content %}
-				<div class="col-md-12">
-					asdsadsa
-				</div>
-			{% endblock %}
-			</div>
-		</div>
-		{% endblock content %}
-	</section>
-	<footer>
-		<div class="container-fluid footer-container">
-			<div class="row">
-				<div class="col-md-10">
-				</div>
-				<div class="col-md-2">
-					<h3 id="votes">Votes: <span class="votes-counter">23</span></h3>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<nav id="slide-navigation">
-		<a href="#" class="navigate disabled navigate-left">
-			<i class="fa fa-fw fa-chevron-left"></i>
-		</a>
-		<a href="#" class="navigate disabled navigate-right">
-			<i class="fa fa-fw fa-chevron-right"></i>
-		</a>
-	</nav>
+<header id="join_header">
+	<div class="container-fluid">
+		<h1>
+			{{ 'stinger_soft_gauge_presentation.presentation.index.join_text'|trans({'%presentation_id%': presentation.id, '%url%':  (app.request.getSchemeAndHttpHost() ~ app.request.baseUrl)})|raw }}
+		</h1>
+	</div>
+</header>
+<div id="content_holder">
+	{% block content_holder %}
+	{% endblock %}
+</div>
+<nav id="slide-navigation">
+	<a href="#" class="navigate navigate-left"> <i
+		class="fa fa-fw fa-chevron-left"></i>
+	</a> <a href="#" class="navigate navigate-right"> <i
+		class="fa fa-fw fa-chevron-right"></i>
+	</a>
+</nav>
+<script>
+		jQuery(document).ready(function(){
+			StingerSoft.Gauge.Backend.Presentation.slides = {{ slideIds|json_encode|raw }};
+			StingerSoft.Gauge.Backend.Presentation.currentSlide = {{slide.id}};
+			StingerSoft.Gauge.Backend.Presentation.loadSlide({{ path(slideService.getPresentationRoute(slide), {'slide': slide.id})|json_encode|raw }});
+		});
+	</script>
 {% endblock body %}

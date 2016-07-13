@@ -1,0 +1,82 @@
+{% extends 'StingerSoftGaugePresentationBundle:Slide:slide.html.twig' %}
+{% block question %}{{ slide.question }}{% endblock %}
+
+{% block slide_content %}
+<div id="chartdiv" style="width: 100%; height: 75vh"></div>
+<script>
+jQuery(document).ready(function(){
+	var chartData = [];
+	{% if slide.chartType == constant('StingerSoft\\GaugePresentationBundle\\Model\\Enums\\ChartType::PIE') %}
+		{{ block('pieChart') }}
+	{% elseif slide.chartType == constant('StingerSoft\\GaugePresentationBundle\\Model\\Enums\\ChartType::RADAR') %}
+		{{ block('radarChart') }}
+	{% elseif slide.chartType == constant('StingerSoft\\GaugePresentationBundle\\Model\\Enums\\ChartType::COLUMN') %}
+		{{ block('columnChart') }}	
+	{% endif %}
+
+	function updateChart(){
+		jQuery.getJSON({{ path('stinger_soft_gauge_presentation_slide_data', {'slide': slide.id})|json_encode|raw}}, function( data ) {
+			chart.animateData(data, { duration: 1000 });
+		});
+	}
+	
+	setInterval(updateChart, 5000);
+
+	updateChart();
+	
+});
+</script>
+{% endblock %}
+
+
+{% block pieChart %}
+	var chart = AmCharts.makeChart( "chartdiv", {
+		"type": "pie",
+		"theme": "light",
+		"dataProvider": [],
+		"valueField": "votes",
+		"titleField": "answer",
+		"outlineAlpha": 0.4,
+		"depth3D": 15,
+		"balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+		"angle": 30,
+		"export": {
+			"enabled": true
+		}
+	});
+{% endblock %}
+
+{% block radarChart %}
+	var chart = AmCharts.makeChart( "chartdiv", {
+		"type": "radar",
+		"theme": "light",
+		"dataProvider": [],
+		"export": {
+			"enabled": true
+		},
+		"graphs": [ {
+			"valueField": "votes",
+			"balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>"
+		}],
+		"categoryField": "answer"
+	});
+{% endblock %}
+
+{% block columnChart %}
+	var chart = AmCharts.makeChart( "chartdiv", {
+		"type": "serial",
+		"theme": "light",
+		"dataProvider": chartData,
+		"export": {
+			"enabled": true
+		},
+		"graphs": [ {
+			"valueField": "votes",
+			"balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+			"fillAlphas": 0.8,
+			"lineAlpha": 0.2,
+			"type": "column"
+		 }],
+		 "categoryField": "answer"
+	});
+{% endblock %}

@@ -65,6 +65,15 @@ interface SlideService {
 	public function hasUserVoted(UserSessionInterface $session, SlideInterface $slide);
 
 	/**
+	 * Gets the route name to render this slide in the presentation mode.
+	 * The ID of the slide will be added to the route as the 'slide' parameter
+	 *
+	 * @param SlideInterface $slide        	
+	 * @return string
+	 */
+	public function getPresentationRoute();
+
+	/**
 	 * Returns true if this service is configured to handle ORM entities
 	 *
 	 * @return boolean

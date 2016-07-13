@@ -3,17 +3,25 @@
 namespace StingerSoft\GaugePresentationBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
-use StingerSoft\GaugePresentationBundle\Model\MultipleChoiceInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-class SlideController extends BaseController {
-	
-	
-	public function slideAction(Request $request, $slide){
+class MultipleChoiceController extends SlideController {
+
+	public function presentationAction(Request $request, $slide) {
 		$slide = $this->getSlideById($slide);
+		
+		return $this->render('StingerSoftGaugePresentationBundle:MultipleChoice:slide.html.twig', array(
+			'slide' => $slide,
+			'slideService' => $this->getSlideService($slide),
+		));
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * @see \StingerSoft\GaugePresentationBundle\Controller\SlideController::dataAction()
+	 */
 	public function dataAction(Request $request, $slide) {
+		
 		$slide = $this->getSlideById($slide);
 		$result = array();
 		
@@ -36,7 +44,7 @@ class SlideController extends BaseController {
 			foreach($slide->getAnswers() as $answer) {
 				$result[] = array(
 					'answer' => $answer->getAnswer(),
-					'votes' => $answerCount[$answer->getId()],
+					'votes' => $answerCount[$answer->getId()] 
 				);
 			}
 		}

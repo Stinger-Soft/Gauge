@@ -1,0 +1,31 @@
+<section id="body">
+	{% block content %}
+	<div class="container-fluid slide-container">
+		<div class="row slide-header">
+			<div class="col-md-10">
+				<h1 class="question-title">{% block question %}{% endblock %}</h1>
+			</div>
+			<div class="col-md-2">
+				<h1 class="logo-container">{% block logo_container %}{% endblock %}</h1>
+			</div>
+		</div>
+		<div class="row slide-content">
+		{% block slide_content %}
+			<div class="col-md-12">
+			</div>
+		{% endblock %}
+		</div>
+	</div>
+	{% endblock content %}
+</section>
+<footer>
+	<div class="container-fluid footer-container">
+		<div class="row">
+			<div class="col-md-10">
+			</div>
+			<div class="col-md-2">
+				<h3 id="votes">Votes: <span class="votes-counter">{% block vote_count %}0{% endblock %}</span></h3>
+			</div>
+		</div>
+	</div>
+</footer>

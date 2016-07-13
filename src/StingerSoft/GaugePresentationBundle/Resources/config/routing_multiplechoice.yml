@@ -1,0 +1,7 @@
+stinger_soft_gauge_presentation_multiple_choice_presentation:
+    path:     /{slide}
+    defaults: { _controller: StingerSoftGaugePresentationBundle:MultipleChoice:presentation }
+    
+stinger_soft_gauge_presentation_multiple_choice_data:
+    path:     /{slide}/data.json
+    defaults: { _controller: StingerSoftGaugePresentationBundle:MultipleChoice:presentation }

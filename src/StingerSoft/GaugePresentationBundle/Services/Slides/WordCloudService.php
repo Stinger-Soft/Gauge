@@ -47,7 +47,7 @@ class WordCloudService extends AbstractSlideService {
 			 * @var StringVoteInterface $vote
 			 */
 			$vote = parent::getVoteInstance($session, $slide);
-			if(!$vote->getId()){
+			if(!$vote->getId()) {
 				$vote->setAnswers(\array_fill(0, $slide->getAnswerCount(), ''));
 			}
 			return $vote;
@@ -82,5 +82,14 @@ class WordCloudService extends AbstractSlideService {
 	 */
 	public function getVoteImplementation() {
 		return $this->isOrm() ? StringVote::class : null;
+	}
+
+	/**
+	 *
+	 * {@inheritdoc}
+	 *
+	 * @see \StingerSoft\GaugePresentationBundle\Services\SlideService::getPresentationRoute()
+	 */
+	public function getPresentationRoute() {
 	}
 }

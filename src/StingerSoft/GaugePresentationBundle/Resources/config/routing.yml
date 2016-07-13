@@ -10,3 +10,8 @@ stinger_soft_gauge_presentation_presentation:
 stinger_soft_gauge_presentation_slide_data:
     path:     /slide/{slide}/data.json
     defaults: { _controller: StingerSoftGaugePresentationBundle:Slide:data }
+    
+    
+stinger_soft_gauge_presentation_multiplechoice:
+    resource: "@StingerSoftGaugePresentationBundle/Resources/config/routing_multiplechoice.yml"
+    prefix:   /multiplechoice/

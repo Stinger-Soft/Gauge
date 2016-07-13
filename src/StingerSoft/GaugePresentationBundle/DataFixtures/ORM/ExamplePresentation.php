@@ -41,6 +41,18 @@ class ExamplePresentation extends AbstractStingerFixture {
 		$this->manager->persist($multipleChoiceSlideAnswer);
 		$this->manager->flush();
 		
+		$multipleChoiceSlideAnswer = new MultipleChoiceAnswer();
+		$multipleChoiceSlideAnswer->setAnswer('Fall');
+		$multipleChoiceSlideAnswer->setQuestion($multipleChoiceSlide);
+		$this->manager->persist($multipleChoiceSlideAnswer);
+		$this->manager->flush();
+		
+		$multipleChoiceSlideAnswer = new MultipleChoiceAnswer();
+		$multipleChoiceSlideAnswer->setAnswer('Winter');
+		$multipleChoiceSlideAnswer->setQuestion($multipleChoiceSlide);
+		$this->manager->persist($multipleChoiceSlideAnswer);
+		$this->manager->flush();
+		
 		
 		$wordCloud = new WordCloud();
 		$wordCloud->setAnswerCount(3);

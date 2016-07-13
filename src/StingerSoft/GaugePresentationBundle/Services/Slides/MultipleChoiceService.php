@@ -60,4 +60,14 @@ class MultipleChoiceService extends AbstractSlideService {
 	public function getVoteImplementation() {
 		return $this->isOrm() ? MultipleChoiceVote::class : null;
 	}
+
+	/**
+	 *
+	 * {@inheritdoc}
+	 *
+	 * @see \StingerSoft\GaugePresentationBundle\Services\SlideService::getPresentationRoute()
+	 */
+	public function getPresentationRoute() {
+		return 'stinger_soft_gauge_presentation_multiple_choice_presentation';
+	}
 }

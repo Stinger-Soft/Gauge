@@ -1,6 +1,9 @@
 StingerSoft\GaugePresentationBundle\Entity\MultipleChoice:
   type:  entity
   fields:
+    chartType:
+      type: integer
+      nullable: true
     allowMultiple:
       type: boolean
       nullable: true

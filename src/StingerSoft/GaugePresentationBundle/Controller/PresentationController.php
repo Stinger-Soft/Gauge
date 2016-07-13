@@ -10,9 +10,18 @@ class PresentationController extends BaseController {
 		$presentation = $this->getPresentationById($presentation);
 		
 		
-		return $this->render('StingerSoftGaugePresentationBundle:Presentation:index.html.twig', array(
+		$slide = $presentation->getSlides()->first();
+		
+		$slideIds = array();
+		foreach($presentation->getSlides() as $item){
+			$slideIds[] = $item->getId();
+		}
+		
+		return $this->render('StingerSoftGaugePresentationBundle:Presentation:presentation.html.twig', array(
 			'presentation' => $presentation,
-			'slide' => $presentation->getSlides()->first()
+			'slide' => $slide,
+			'slideService' => $this->getSlideService($slide),
+			'slideIds' => $slideIds,
 		));
 	}
 }

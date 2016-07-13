@@ -19,6 +19,8 @@ use StingerSoft\GaugePresentationBundle\Services\Slides\MultipleChoiceService;
 use StingerSoft\GaugePresentationBundle\Services\Slides\WordCloudService;
 use StingerSoft\GaugePresentationBundle\Services\Slides\ScaleService;
 use Doctrine\Common\Util\ClassUtils;
+use StingerSoft\GaugePresentationBundle\Model\Themes\BaseTheme;
+use Symfony\Component\HttpFoundation\Response;
 
 class BaseController extends PlatformController {
 
@@ -123,7 +125,7 @@ class BaseController extends PlatformController {
 	}
 
 	/**
-	 * 
+	 *
 	 * Should be replaced by compiler pass
 	 *
 	 * @param SlideInterface $slide        	
@@ -133,14 +135,25 @@ class BaseController extends PlatformController {
 		$services = array(
 			new MultipleChoiceService(),
 			new ScaleService(),
-			new WordCloudService(),
+			new WordCloudService() 
 		);
-		foreach($services as $service){
-			$reflClass = ClassUtils::newReflectionClass($slide);			
-			if($reflClass->implementsInterface($service->getSupportedSlideType())){
+		foreach($services as $service) {
+			$reflClass = ClassUtils::newReflectionClass($slide);
+			if($reflClass->implementsInterface($service->getSupportedSlideType())) {
 				return $service;
 			}
 		}
 		return null;
+	}
+
+	/**
+	 *
+	 * {@inheritdoc}
+	 *
+	 * @see \Symfony\Bundle\FrameworkBundle\Controller\Controller::render()
+	 */
+	public function render($view, array $parameters = array(), Response $response = null) {
+		$parameters['theme'] = new BaseTheme();
+		return parent::render($view, $parameters, $response);
 	}
 }

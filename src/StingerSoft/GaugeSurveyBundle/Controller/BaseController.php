@@ -11,14 +11,5 @@ use StingerSoft\GaugePresentationBundle\Model\Themes\BaseTheme;
  */
 class BaseController extends BasePresentationController {
 
-	/**
-	 *
-	 * {@inheritdoc}
-	 *
-	 * @see \Symfony\Bundle\FrameworkBundle\Controller\Controller::render()
-	 */
-	public function render($view, array $parameters = array(), Response $response = null) {
-		$parameters['theme'] = new BaseTheme();
-		return parent::render($view, $parameters, $response);
-	}
+
 }
