@@ -1,3 +1,7 @@
+_stinger_soft_platform:
+    resource: "@StingerSoftPlatformBundle/Resources/config/routing.yml"
+    prefix:   /
+
 stinger_soft_gauge_survey:
     resource: "@StingerSoftGaugeSurveyBundle/Resources/config/routing.yml"
     prefix:   /
