@@ -15,7 +15,7 @@ jQuery(document).ready(function(){
 	{% endif %}
 
 	function updateChart(){
-		jQuery.getJSON({{ path('stinger_soft_gauge_presentation_slide_data', {'slide': slide.id})|json_encode|raw}}, function( data ) {
+		jQuery.getJSON({{ path('stinger_soft_gauge_presentation_multiple_choice_data', {'slide': slide.id})|json_encode|raw}}, function( data ) {
 			chart.animateData(data, { duration: 1000 });
 		});
 	}

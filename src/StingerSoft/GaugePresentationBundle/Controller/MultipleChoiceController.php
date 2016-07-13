@@ -4,6 +4,7 @@ namespace StingerSoft\GaugePresentationBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use StingerSoft\GaugePresentationBundle\Model\MultipleChoiceInterface;
 
 class MultipleChoiceController extends SlideController {
 

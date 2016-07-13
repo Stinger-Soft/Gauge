@@ -4,4 +4,4 @@ stinger_soft_gauge_presentation_multiple_choice_presentation:
     
 stinger_soft_gauge_presentation_multiple_choice_data:
     path:     /{slide}/data.json
-    defaults: { _controller: StingerSoftGaugePresentationBundle:MultipleChoice:presentation }
+    defaults: { _controller: StingerSoftGaugePresentationBundle:MultipleChoice:data }
