@@ -21,3 +21,7 @@ stinger_soft_gauge_presentation_multiplechoice:
 stinger_soft_gauge_presentation_scale:
     resource: "@StingerSoftGaugePresentationBundle/Resources/config/routing_scale.yml"
     prefix:   /scale/
+    
+stinger_soft_gauge_presentation_wordcloud:
+    resource: "@StingerSoftGaugePresentationBundle/Resources/config/routing_wordcloud.yml"
+    prefix:   /wordcloud/

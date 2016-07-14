@@ -20,6 +20,7 @@ class StingerSoftGaugePresentationBundle extends Bundle {
 		// END remove later
 		
 		$bundles = array_merge($bundles, StingerSoftPlatformBundle::getRequiredBundles($env));
+		$bundles = array_merge($bundles, \StingerSoft\D3JsBundle\StingerSoftD3JsBundle::getRequiredBundles($env));
 		return $bundles;
 	}
 }

@@ -1,0 +1,7 @@
+stinger_soft_gauge_presentation_wordcloud_presentation:
+    path:     /{slide}
+    defaults: { _controller: StingerSoftGaugePresentationBundle:WordCloud:presentation }
+    
+stinger_soft_gauge_presentation_wordcloud_data:
+    path:     /{slide}/data.json
+    defaults: { _controller: StingerSoftGaugePresentationBundle:WordCloud:data }

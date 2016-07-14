@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d15b82fe7a0abe174009e2fa5bee7efb",
-    "content-hash": "86e406149723be1c9fb500ccd61aa92f",
+    "hash": "4972843a28eb703538b5e2892802665a",
+    "content-hash": "fcef9c7a7039c2f98d1c431de9ca6a97",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -2118,6 +2118,57 @@
             "time": "2016-07-04 12:37:47"
         },
         {
+            "name": "stinger-soft/d3js-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Stinger-Soft/D3JsBundle.git",
+                "reference": "f8e1d7b7ebdcb23bf1c671cc428f9b40b6cea661"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Stinger-Soft/D3JsBundle/zipball/f8e1d7b7ebdcb23bf1c671cc428f9b40b6cea661",
+                "reference": "f8e1d7b7ebdcb23bf1c671cc428f9b40b6cea661",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3",
+                "symfony/symfony": "^2.7|^3.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "StingerSoft\\D3JsBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Kotte",
+                    "email": "oliver.kotte@stinger-soft.net",
+                    "homepage": "http://dev.koddistortion.net",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Florian Meyer",
+                    "email": "florian.meyer@stinger-soft.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "D3.js Symfony Bundle (http://d3js.org/) including some plugins",
+            "homepage": "http://www.stinger-soft.net",
+            "keywords": [
+                "charts",
+                "d3",
+                "d3.js",
+                "graph"
+            ],
+            "time": "2016-07-14 15:24:27"
+        },
+        {
             "name": "stinger-soft/doctrine-commons",
             "version": "dev-master",
             "source": {
@@ -3413,7 +3464,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "stinger-soft/platform-bundle": 20,
-        "stinger-soft/amchart-bundle": 20
+        "stinger-soft/amchart-bundle": 20,
+        "stinger-soft/d3js-bundle": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
