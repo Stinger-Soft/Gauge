@@ -94,5 +94,6 @@ class ScaleService extends AbstractSlideService {
 	 * @see \StingerSoft\GaugePresentationBundle\Services\SlideService::getPresentationRoute()
 	 */
 	public function getPresentationRoute() {
+		return 'stinger_soft_gauge_presentation_scale_presentation';
 	}
 }

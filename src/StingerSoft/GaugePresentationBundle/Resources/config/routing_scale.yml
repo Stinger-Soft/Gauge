@@ -1,0 +1,7 @@
+stinger_soft_gauge_presentation_scale_presentation:
+    path:     /{slide}
+    defaults: { _controller: StingerSoftGaugePresentationBundle:Scale:presentation }
+    
+stinger_soft_gauge_presentation_scale_data:
+    path:     /{slide}/data.json
+    defaults: { _controller: StingerSoftGaugePresentationBundle:Scale:data }

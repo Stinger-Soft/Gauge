@@ -9,7 +9,7 @@ class SlideController extends BaseController {
 	public function slideAction(Request $request, $slide) {
 		$slide = $this->getSlideById($slide);
 		$service = $this->getSlideService($slide);
-		return $this->redirect($service->getPresentationRoute(), array(
+		return $this->redirectToRoute($service->getPresentationRoute(), array(
 			'slide' => $slide->getId() 
 		));
 	}

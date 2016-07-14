@@ -1,0 +1,72 @@
+{% extends 'StingerSoftGaugePresentationBundle:Slide:slide.html.twig' %}
+{% block question %}{{ slide.question }}{% endblock %}
+
+{% block slide_content %}
+<div style="margin-left: 2vw; margin-right: 2vw;">
+{% for answer in slide.answers %}
+	<div class="chart_with_overlay" style="position: relative;">
+		<div id="chartdiv_{{ answer.id }}" style="width: 100%; height: {{ 60/(slide.answers|length) }}vh;"></div>
+		<div id="chartoverlay_{{ answer.id }}" style="width: 100%; height: {{ 60/(slide.answers|length) }}vh; position: absolute; top: 0; left: 0; background-color: white; text-align: center; line-height: 20vh; font-size: 4vh; opacity: 0.9;">
+			{{ answer}}: <span id="average_{{ answer.id }}">-</span>
+		</div>
+	</div>
+{% endfor %}
+</div>
+<script>
+jQuery(document).ready(function(){
+	{% for answer in slide.answers %}
+	var chart_{{answer.id}} = AmCharts.makeChart( "chartdiv_{{answer.id}}", {
+    		"type": "serial",
+    		"theme": "light",
+    		"dataProvider": [],
+    		"export": {
+    			"enabled": true
+    		},
+    		"graphs": [ {
+    			"valueField": "votes",
+    			"fillAlphas": 0.8,
+    			"lineAlpha": 0.2,
+    			"type": "column",
+    			"autoMargins": false,
+    			"marginLeft": 0,
+    			"marginRight": 0,
+    			"marginTop": 0,
+    			"marginBottom": 0,
+    			"labelText": "[[value]]"
+    		 }],
+		    "valueAxes": [{
+		        "axisAlpha": 0.3,
+		        "gridAlpha": 0
+		    }],
+		    "categoryAxis": {
+		        "gridPosition": "start",
+		        "axisAlpha": 0,
+		        "gridAlpha": 0,
+		        "position": "left"
+		    },
+    		 "categoryField": "answer"
+    	});
+	{% endfor %}
+	
+	function updateCharts(){
+		jQuery.getJSON({{ path('stinger_soft_gauge_presentation_scale_data', {'slide': slide.id})|json_encode|raw}}, function( data ) {
+			{% for answer in slide.answers %}
+				chart_{{answer.id}}.animateData(data[{{answer.id}}], { duration: 1000 });
+				var average = 0;
+				var votes = 0;
+				jQuery(data[{{answer.id}}]).each(function(i, item){
+					votes += item.votes;
+					average += item.votes * item.answer;
+				});
+				jQuery('#average_{{ answer.id }}').text(Math.round(average/votes * 100) / 100);
+			{% endfor %}
+		});
+	}
+	
+	setInterval(updateCharts, 5000);
+
+	updateCharts();
+	
+});
+</script>
+{% endblock %}

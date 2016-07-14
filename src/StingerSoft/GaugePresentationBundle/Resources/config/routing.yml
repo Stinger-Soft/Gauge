@@ -17,3 +17,7 @@ stinger_soft_gauge_presentation_slide:
 stinger_soft_gauge_presentation_multiplechoice:
     resource: "@StingerSoftGaugePresentationBundle/Resources/config/routing_multiplechoice.yml"
     prefix:   /multiplechoice/
+    
+stinger_soft_gauge_presentation_scale:
+    resource: "@StingerSoftGaugePresentationBundle/Resources/config/routing_scale.yml"
+    prefix:   /scale/
