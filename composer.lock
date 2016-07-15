@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4972843a28eb703538b5e2892802665a",
+    "hash": "249f1bdd2c85af54cafaaf72142bc17c",
     "content-hash": "fcef9c7a7039c2f98d1c431de9ca6a97",
     "packages": [
         {
@@ -2123,12 +2123,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Stinger-Soft/D3JsBundle.git",
-                "reference": "f8e1d7b7ebdcb23bf1c671cc428f9b40b6cea661"
+                "reference": "ea8fc209a388596ce16fd7ffc5c159b35537b804"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Stinger-Soft/D3JsBundle/zipball/f8e1d7b7ebdcb23bf1c671cc428f9b40b6cea661",
-                "reference": "f8e1d7b7ebdcb23bf1c671cc428f9b40b6cea661",
+                "url": "https://api.github.com/repos/Stinger-Soft/D3JsBundle/zipball/ea8fc209a388596ce16fd7ffc5c159b35537b804",
+                "reference": "ea8fc209a388596ce16fd7ffc5c159b35537b804",
                 "shasum": ""
             },
             "require": {
@@ -2166,7 +2166,7 @@
                 "d3.js",
                 "graph"
             ],
-            "time": "2016-07-14 15:24:27"
+            "time": "2016-07-14 15:29:18"
         },
         {
             "name": "stinger-soft/doctrine-commons",
@@ -2174,12 +2174,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Stinger-Soft/DoctrineCommons.git",
-                "reference": "a3a38b042a46b44d99c969153a470e972c7fe98a"
+                "reference": "12b3c97948f6b4016de0f2bcd200620c1a5a3564"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Stinger-Soft/DoctrineCommons/zipball/a3a38b042a46b44d99c969153a470e972c7fe98a",
-                "reference": "a3a38b042a46b44d99c969153a470e972c7fe98a",
+                "url": "https://api.github.com/repos/Stinger-Soft/DoctrineCommons/zipball/12b3c97948f6b4016de0f2bcd200620c1a5a3564",
+                "reference": "12b3c97948f6b4016de0f2bcd200620c1a5a3564",
                 "shasum": ""
             },
             "require": {
@@ -2225,7 +2225,7 @@
                 "commons",
                 "doctrine"
             ],
-            "time": "2016-07-01 15:29:28"
+            "time": "2016-07-15 13:19:48"
         },
         {
             "name": "stinger-soft/php-commons",
