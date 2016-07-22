@@ -39,9 +39,8 @@ class ScaleController extends SlideController {
 			 */
 			foreach($slide->getVotes() as $vote) {
 				foreach($vote->getRatings() as $rating) {
+					if($rating->getRating() < $slide->getLowValue() || $rating->getRating() > $slide->getHighValue()) continue;
 					$answerCount[$rating->getAnswer()->getId()][$rating->getRating()]++;
-					
-					$answerCount[$rating->getAnswer()->getId()][$rating->getRating()] += 23;
 				}
 			}
 			

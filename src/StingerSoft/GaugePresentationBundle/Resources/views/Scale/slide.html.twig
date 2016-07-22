@@ -48,7 +48,7 @@ jQuery(document).ready(function(){
     	});
 	{% endfor %}
 	
-	function updateCharts(){
+	function updateCharts_{{slide.id}}(){
 		jQuery.getJSON({{ path('stinger_soft_gauge_presentation_scale_data', {'slide': slide.id})|json_encode|raw}}, function( data ) {
 			{% for answer in slide.answers %}
 				chart_{{answer.id}}.animateData(data[{{answer.id}}], { duration: 1000 });
@@ -63,10 +63,7 @@ jQuery(document).ready(function(){
 		});
 	}
 	
-	setInterval(updateCharts, 5000);
-
-	updateCharts();
-	
+	StingerSoft.Gauge.Backend.Presentation.setUpdateFunction(updateCharts_{{slide.id}});
 });
 </script>
 {% endblock %}

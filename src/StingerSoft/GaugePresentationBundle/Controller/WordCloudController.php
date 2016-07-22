@@ -5,6 +5,7 @@ namespace StingerSoft\GaugePresentationBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use StingerSoft\GaugePresentationBundle\Model\MultipleChoiceInterface;
+use StingerSoft\GaugePresentationBundle\Model\WordCloudInterface;
 
 class WordCloudController extends SlideController {
 
@@ -26,26 +27,27 @@ class WordCloudController extends SlideController {
 		$slide = $this->getSlideById($slide);
 		$result = array();
 		
-		if($slide instanceof MultipleChoiceInterface) {
-			$answerCount = array();
-			foreach($slide->getAnswers() as $answer) {
-				$answerCount[$answer->getId()] = 0;
-			}
+		if($slide instanceof WordCloudInterface) {
+			$answers = array();
 			
 			/**
 			 *
-			 * @var \StingerSoft\GaugePresentationBundle\Model\MultipleChoiceVoteInterface $vote
+			 * @var \StingerSoft\GaugePresentationBundle\Model\StringVoteInterface $vote
 			 */
 			foreach($slide->getVotes() as $vote) {
-				foreach($vote->getAnswers() as $answer) {
-					$answerCount[$answer->getId()]++;
+				foreach($vote->getAnswers() as $answer){
+					if(!isset($answers[$answer])){
+						$answers[$answer] = 1;
+					} else {
+						$answers[$answer] = $answers[$answer] + 1;
+					}
 				}
 			}
 			
-			foreach($slide->getAnswers() as $answer) {
+			foreach($answers as $answer => $count) {
 				$result[] = array(
-					'answer' => $answer->getAnswer(),
-					'votes' => $answerCount[$answer->getId()] 
+					'text' => $answer,
+					'count' => $count
 				);
 			}
 		}

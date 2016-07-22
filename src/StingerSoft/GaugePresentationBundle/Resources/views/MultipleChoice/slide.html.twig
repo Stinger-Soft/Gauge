@@ -14,15 +14,13 @@ jQuery(document).ready(function(){
 		{{ block('columnChart') }}	
 	{% endif %}
 
-	function updateChart(){
+	function updateCharts_{{slide.id}}(){
 		jQuery.getJSON({{ path('stinger_soft_gauge_presentation_multiple_choice_data', {'slide': slide.id})|json_encode|raw}}, function( data ) {
 			chart.animateData(data, { duration: 1000 });
 		});
 	}
-	
-	setInterval(updateChart, 5000);
 
-	updateChart();
+	StingerSoft.Gauge.Backend.Presentation.setUpdateFunction(updateCharts_{{slide.id}});
 	
 });
 </script>

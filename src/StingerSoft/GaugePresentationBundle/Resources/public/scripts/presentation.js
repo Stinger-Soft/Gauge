@@ -16,6 +16,21 @@ StingerSoft.Gauge.Backend.Presentation.slides = [];
 
 StingerSoft.Gauge.Backend.Presentation.currentSlide = false;
 
+StingerSoft.Gauge.Backend.Presentation.currentUpdateFunction = false;
+
+StingerSoft.Gauge.Backend.Presentation.setUpdateFunction = function(callback){
+	StingerSoft.Gauge.Backend.Presentation.currentUpdateFunction = callback;
+	callback();
+};
+
+StingerSoft.Gauge.Backend.Presentation.update = function(){
+	if(StingerSoft.Gauge.Backend.Presentation.currentUpdateFunction){
+		StingerSoft.Gauge.Backend.Presentation.currentUpdateFunction();
+	}
+};
+
+StingerSoft.Gauge.Backend.Presentation.interval = setInterval(StingerSoft.Gauge.Backend.Presentation.update, 5000);
+
 StingerSoft.Gauge.Backend.Presentation.loadPrev = function(){
 	var prevSlideIndex = StingerSoft.Gauge.Backend.Presentation.slides.indexOf(StingerSoft.Gauge.Backend.Presentation.currentSlide) - 1;
 	if(prevSlideIndex < 0 && prevSlideIndex < StingerSoft.Gauge.Backend.Presentation.slides.length){

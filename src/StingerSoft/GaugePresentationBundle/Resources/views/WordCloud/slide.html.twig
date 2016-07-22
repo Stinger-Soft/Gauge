@@ -2,4 +2,20 @@
 {% block question %}{{ slide.question }}{% endblock %}
 
 {% block slide_content %}
+<div id="wordCloud_{{ slide.id }}" style="height: 75vh; width: 100vw;"></div>
+<script>
+jQuery(document).ready(function(){
+	jQuery('#wordCloud_{{ slide.id }}').wordCloud([], { fontMin: 45, fontMax: 100});
+
+
+	function updateCloud_{{ slide.id }}(){
+		jQuery.getJSON({{ path('stinger_soft_gauge_presentation_wordcloud_data', {'slide': slide.id})|json_encode|raw}}, function( data ) {
+			jQuery('#wordCloud_{{ slide.id }}').trigger('update.wordcloud', [data]);
+		});
+	}
+	
+	StingerSoft.Gauge.Backend.Presentation.setUpdateFunction(updateCloud_{{ slide.id }});
+
+});
+</script>
 {% endblock %}
